@@ -16,9 +16,7 @@ module.exports = {
        .where('email', req.body.email)
        .then((result)=>{
          let user = result[0];
-         hasher.compare(user,req.body).then((isMatch)=>{
-
-         })
+         hasher.compare(user, req.body).then((isMatch)=>{
          if(isMatch){
            req.session.user_id = user.id;
            req.session.save(()=>{
@@ -30,19 +28,24 @@ module.exports = {
            res.redirect('/donor_dashboard');
          }
        }).catch(()=>{
-         res.redirect('/index');
+         res.redirect('/');
        })
      }
+   })
    })
  },
  register: (req, res)=> {
   hasher.hash(req.body).then((user)=>{
   knex('user').insert({
     name:user.name,
+    password:user.password,
     email:user.email,
-    password:user.password
+    phone:user.phone,
+    avatar_img:user.avatar_img,
+    user_type:user.user_type
+
   }).then(()=>{
-    res.redirect('/index');
+    res.redirect('/');
   }).catch(()=>{
     req.session.errors.push('Registration Invalid')
   })

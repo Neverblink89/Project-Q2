@@ -103,7 +103,7 @@ body{
 <li><a href="http://github.com">Link 2</a></li>
 <li><a href="http://github.com">Link 3</a></li>
 <li><a class="login" href="http://github.com">Sign-in</a></li>
-<li><a class="login" href="http://github.com">Login</a></li>
+<li><a class="login" href="">Login</a></li>
 </ul>
 </div>
 <div class="img-container">
@@ -128,7 +128,41 @@ body{
 <img src="" alt="">
 </div>
 </div>
+<div id="modal-wrapper" class="modal">
 
+  <form class="modal-content animate" action="/registration">
+
+    <div class="container">
+      <h2>registration</h2>
+      <input type="text" placeholder="Enter Username" name="uname">
+      <input type="password" placeholder="Enter Password" name="psw">
+      <input type="email" name="email" placeholder="email"value="">
+      <input type="text" name="phone" placeholder="phone"value="">
+      <input type="text" name="avatar_img" placeholder="img_url"value="">
+      <select class="" name="user_type">
+        <option value="donor">Donor</option>
+        <option value="charity">Charity</option>
+      </select>
+
+      <button type="submit">Register</button>
+
+    </div>
+
+  </form>
+
+</div>
+<form class="" action="/login" method="post">
+
+
+<div class="container">
+  <h2>login</h2>
+  <input type="text" placeholder="Email" name="email">
+  <input type="password" placeholder="Enter Password" name="psw">
+  <button type="submit">Login</button>
+</div>
+
+</div>
+</form>
 <div class="footer">
 
 </div>

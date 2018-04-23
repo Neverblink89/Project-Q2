@@ -1,5 +1,5 @@
 const knex = require("../db/knex.js");
-const hasher = require("../db/hasher.js");
+const hasher = require("../config/hasher.js");
 
 module.exports = {
   home: function(req, res) {
@@ -32,8 +32,8 @@ module.exports = {
        }).catch(()=>{
          res.redirect('/index');
        })
-     })
-   }
+     }
+   })
  },
  register: (req, res)=> {
   hasher.hash(req.body).then((user)=>{

@@ -55,16 +55,44 @@ body{
   padding-bottom: 4px;
 }
 .row-text{
-  width: 100%;
+  width: 78%;
   height: 5em;
+  border: 1px solid black;
+  align-self: center;
+  margin:auto;
 }
 .panel{
   width: 78%;
-  margin: auto;
-  align-self: center;
+  height: 30em;
   border: 1px solid black;
-  height: 40em;
-  display: flex;
+  margin: auto;
+  margin-top: 6em;
+  text-align: center;
+}
+.charities{
+  height: 24em;
+  width: 20em;
+  border: 1px solid grey;
+  display: inline-block;
+
+}
+.charities + .charities{
+  margin-left: 2em;
+}
+
+.donors{
+
+}
+
+.footer {
+  margin-top: 7em;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #176ac4;
+    color: white;
+    text-align: center;
+    height: 10em;
 }
 </style>
 </head>
@@ -74,8 +102,8 @@ body{
 <li class=""><a href="http://github.com">Our mission</a></li>
 <li><a href="http://github.com">Link 2</a></li>
 <li><a href="http://github.com">Link 3</a></li>
-<li><a href="http://github.com">Sign-in</a></li>
-<li class="login"><a href="http://github.com">Login</a></li>
+<li><a class="login" href="http://github.com">Sign-in</a></li>
+<li><a class="login" href="http://github.com">Login</a></li>
 </ul>
 </div>
 <div class="img-container">
@@ -84,14 +112,26 @@ body{
 <div class="row">
 <h1 class="centered">Help those who need it most.</h1>
 </div>
-<div class="panel">
 <div class="row-text">
     <h3>Where would your contribution go?</h3>
     <p>Take a look at some of the charities that would benefit from your generosity</p>
 </div>
+<div class="panel">
+
+<div class="charities">
+<img src="" alt="">
 </div>
 <div class="charities">
+<img src="" alt="">
+</div>
+<div class="charities">
+<img src="" alt="">
+</div>
+</div>
+
+<div class="footer">
 
 </div>
+
 </body>
 </html>

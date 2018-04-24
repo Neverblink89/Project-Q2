@@ -24,7 +24,9 @@ module.exports = function(app){
 
   app.post('/newOrder/:id', createNew.newOrder);
 
-  app.get('/charitySummary/:id', donations.charity);
+  app.get('/ViewOrder/:id', donations.view_order);
+
+  app.get('/update/:id', donations.update);
 
 }
 function authenticateUser(req, res, next){

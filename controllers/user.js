@@ -18,7 +18,7 @@ module.exports = {
       .where('email', req.body.email)
       .then((result) => {
         let user = result[0];
-        hasher.compare(user, req.body).then((isMatch) => {
+        hasher.check(user, req.body).then((isMatch) => {
           if (isMatch) {
             req.session.user_id = user.id;
             req.session.save(() => {

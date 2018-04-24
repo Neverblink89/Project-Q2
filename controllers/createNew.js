@@ -10,6 +10,7 @@ newOrder: (req, res)=>{
     address: req.body.address,
     deadline: req.body.deadline,
     confirmation: req.body.confirmation,
+    tax_value: req.body.tax_value,
     user_id: req.params.id
   }).then(()=>{
     res.redirect('/donorSummary');

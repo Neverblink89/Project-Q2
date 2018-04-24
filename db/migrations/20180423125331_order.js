@@ -8,7 +8,7 @@ exports.up = function(knex, Promise) {
     .inTable('user')
     .onDelete('CASCADE')
     .index();
-    table.integer('size');
+    table.string('size');
     table.date('date');
     table.string('deadline');
     table.string('address');

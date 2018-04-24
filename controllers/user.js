@@ -14,7 +14,7 @@ module.exports = {
     })
   },
   login: (req, res) => {
-    console.log("running me");
+
     knex('user')
       .where('email', req.body.email)
       .then((result) => {
@@ -69,7 +69,7 @@ module.exports = {
     .andWhere('user.id', req.session.user_id)
     .then((result)=>{
       res.render('createNew', {user: result[0]});
-      console.log(result);
+    
     })
   },
   donations: (req, res)=>{

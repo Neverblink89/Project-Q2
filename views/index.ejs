@@ -264,7 +264,7 @@
       <li class="left"><a href="#">How we can help</a></li>
       <li><a href="#">Support</a></li>
       <li><a href="#">About</a></li>
-      <li><a onclick="document.getElementById('modal-wrapper1').style.display='block'" class="login" href="#">Sign-in</a></li>
+      <li><a onclick="document.getElementById('modal-wrapper1').style.display='block'" class="login" href="#">Register</a></li>
       <li><a class="login" onclick="document.getElementById('modal-wrapper').style.display='block'" href="#">Login</a></li>
     </ul>
   </div>
@@ -282,17 +282,19 @@
     <h3>Where would your contribution go?</h3>
     <p>Take a look at some of the charities that would benefit from your generosity</p>
   </div>
-  <div class="panel">
 
+  <div class="panel">
+      <% for(let i=0;i<users.length;i++){  %>
     <div class="charities">
-      <img src="" alt="">
+      <img src="<%=users[i].avatar_img%>" alt="">
     </div>
     <div class="charities">
-      <img src="" alt="">
+      <img src="<%=users[i].avatar_img%>" alt="">
     </div>
     <div class="charities">
-      <img src="" alt="">
+      <img src="<%=users[i].avatar_img%>" alt="">
     </div>
+    <% } %>
   </div>
 
 

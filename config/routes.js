@@ -28,6 +28,8 @@ module.exports = function(app){
 
   app.get('/update/:id', donations.update);
 
+  app.post('/note/:id', donations.note);
+
 }
 function authenticateUser(req, res, next){
   if(!req.session.user_id){

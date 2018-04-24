@@ -1,14 +1,16 @@
 
-const index = require("../controllers/index.js")
-
+const user = require("../controllers/user.js")
 
 module.exports = function(app){
+// index page
+  app.get('/', user.home);
 
-  app.get('/', index.home);
+  app.post('/registration', user.register);
 
-  app.post('/registration', index.register);
+  app.post('/login', user.login);
 
-  app.post('/login', index.login);
-
+  // app.get('/donations', user.donation)
+  //
+  // app.get('/createNew', user.createNew)
 
 }

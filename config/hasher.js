@@ -3,29 +3,29 @@ let SALT_WORK_FACTOR = 10;
 
 module.exports = {
 
-  hash: function(user){
-    return new Promise((resolve, reject)=>{
+  hash: function(user) {
+    return new Promise((resolve, reject) => {
       bcrypt.genSalt(SALT_WORK_FACTOR, function(err, salt) {
+        if (err) reject(err);
+
+
+        bcrypt.hash(user.password, salt, null, function(err, hash) {
           if (err) reject(err);
 
 
-          bcrypt.hash(user.password, salt, null, function(err, hash) {
-              if (err) reject(err);
-
-
-              user.password = hash;
-              resolve(user);
-          });
+          user.password = hash;
+          resolve(user);
+        });
       });
     })
 
   },
 
-  check: function(encryptedUser, user){
-    return new Promise((resolve, reject)=>{
+  check: function(encryptedUser, user) {
+    return new Promise((resolve, reject) => {
       bcrypt.compare(user.password, encryptedUser.password, function(err, isMatch) {
-          if (err) reject(err);
-          resolve(isMatch);
+        if (err) reject(err);
+        resolve(isMatch);
       });
     })
 

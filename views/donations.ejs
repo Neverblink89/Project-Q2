@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<style>
+  html,
+  body {
+    height: 100%;
+  }
+
+  body {
+    margin: 0;
+  }
+
+  #navbar ul {
+    margin: 0;
+    padding: 5px;
+    list-style-type: none;
+    text-align: left;
+    background-color: #176ac4;
+    height: 4em;
+    line-height: 4em;
+  }
+
+  #navbar ul li {
+    display: inline;
+  }
+
+  #navbar ul li a {
+    text-decoration: none;
+    padding: .2em 1em;
+    margin-left: 2em;
+    color: #fff;
+    z-index: 2;
+
+  }
+
+  #navbar ul li a:hover {
+    color: #000;
+    background: rgba(255, 255, 255, 0.5);
+    height: 100%;
+  }
+
+  .logout {
+    float: right;
+  }
+
+  .donation-container {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .row {
+    width: auto;
+    border: 1px solid blue;
+  }
+
+  .flex-item {
+    background-color: tomato;
+    padding: 5px;
+    width: 30em;
+    height: 20px;
+    margin: 10px;
+    line-height: 20px;
+    color: white;
+    font-weight: bold;
+    font-size: 2em;
+    text-align: center;
+  }
+</style>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+  <div id="navbar">
+    <ul>
+      <li class=""><a href="#">Our mission</a></li>
+      <li><a href="#">Support</a></li>
+      <li><a href="#">About</a></li>
+      <li><a class="logout" href="#">Logout</a></li>
+    </ul>
+  </div>
+  <div class="donation-container">
+    <div class="row">
+      <div class="flex-item">1</div>
+      <div class="flex-item">2</div>
+      <div class="flex-item">3</div>
+      <div class="flex-item">4</div>
+    </div>
+  </div>
+</body>
+
+</html>

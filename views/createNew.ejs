@@ -86,7 +86,7 @@
     </ul>
   </div>
   <div class="container">
-    <form class="" action="index.html" method="post">
+    <form class="" action="/newOrder/<%=user.id%>" method="post">
       <h3>Create a food pick up</h3>
       <input type="text" name="description" placeholder="Food description">
       <input type="hidden"name="confirmation" value="unconfirmed">
@@ -95,7 +95,7 @@
       <input type="text" name="deadline" placeholder="deadline time">
       <input type="text" name="tax_value" placeholder="estimated value">
       <br>
-      <button type="button" class="btn">Enter Order</button>
+      <button type="submit" class="btn">Enter Order</button>
     </form>
   </div>
   <script type="text/javascript">

@@ -19,6 +19,7 @@ module.exports = {
       .where('email', req.body.email)
       .then((result) => {
         let user = result[0];
+
         hasher.check(user, req.body).then((isMatch) => {
           if (isMatch) {
             req.session.user_id = user.id;
@@ -38,6 +39,8 @@ module.exports = {
             res.redirect('/')
           }
         })
+      }).catch(()=>{
+        res.redirect("/");
       })
   },
   register: (req, res) => {
@@ -64,8 +67,9 @@ module.exports = {
     knex('user')
     .where('user.user_type', 'donor')
     .andWhere('user.id', req.session.user_id)
-    .then(()=>{
-      res.render('createNew');
+    .then((result)=>{
+      res.render('createNew', {user: result[0]});
+      console.log(result);
     })
   },
   donations: (req, res)=>{

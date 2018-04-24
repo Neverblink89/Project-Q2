@@ -21,7 +21,8 @@ text-decoration: none;
 padding: .2em 1em;
 margin-left: 2em;
 color: #fff;
-background-color: #176ac4;
+z-index: 2;
+
 }
 
 #navbar ul li a:hover {
@@ -57,7 +58,6 @@ body{
 .row-text{
   width: 78%;
   height: 5em;
-  border: 1px solid black;
   align-self: center;
   margin:auto;
 }
@@ -66,13 +66,12 @@ body{
   height: 30em;
   border: 1px solid black;
   margin: auto;
-  margin-top: 6em;
+  margin-top: 2em;
   text-align: center;
 }
 .charities{
   height: 24em;
   width: 20em;
-  border: 1px solid grey;
   display: inline-block;
 
 }
@@ -133,6 +132,7 @@ select{
 
 /* Center the image and position the close button */
 .imgcontainer {
+
     text-align: center;
     margin: 24px 0 12px 0;
     position: relative;
@@ -183,6 +183,11 @@ select{
 .animate {
     animation: zoom 0.6s
 }
+.mission{
+  width: 78%;
+  height: 20em;
+  margin: auto;
+}
 
 @keyframes zoom {
     from {transform: scale(0)}
@@ -194,11 +199,11 @@ select{
 <body>
 <div id="navbar">
 <ul>
-<li class=""><a href="http://github.com">Our mission</a></li>
-<li><a href="http://github.com">Link 2</a></li>
-<li><a href="http://github.com">Link 3</a></li>
+<li class=""><a href="#">Our mission</a></li>
+<li><a href="#">Link 2</a></li>
+<li><a href="#">Link 3</a></li>
 <li><a onclick="document.getElementById('modal-wrapper1').style.display='block'" class="login" href="#">Sign-in</a></li>
-<li><a onclick="document.getElementById('modal-wrapper').style.display='block'" class="login" href="#">Login</a></li>
+<li ><a class="login" onclick="document.getElementById('modal-wrapper').style.display='block'" href="#">Login</a></li>
 </ul>
 </div>
 <div class="img-container">
@@ -262,7 +267,10 @@ select{
     </div>
   </form>
 </div>
-
+<div class="mission">
+  <h3>Mission Statement</h3>
+  <p>Our mission is to gather the Phoenix business community and provide food to the charities that can best distribute it.</p>
+</div>
 <script>
 // If user clicks anywhere outside of the modal, Modal will close
 var modal = document.getElementById('modal-wrapper');

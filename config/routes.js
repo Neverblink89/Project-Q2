@@ -18,7 +18,7 @@ module.exports = function(app){
 
   app.get('/createNew', user.createNew);
 
-  app.post('/newOrder', createNew.newOrder);
+  // app.post('/newOrder', createNew.newOrder);
 
   app.get('/donorSummary', createNew.donor_summary);
 

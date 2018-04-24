@@ -20,6 +20,8 @@ module.exports = function(app){
 
   app.post('/newOrder', createNew.newOrder);
 
+  app.get('/donorSummary', createNew.donor_summary);
+
 }
 function authenticateUser(req, res, next){
   if(!req.session.user_id){

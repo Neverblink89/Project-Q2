@@ -1,5 +1,7 @@
 
 const user = require("../controllers/user.js")
+const donations = require("../controllers/donations.js")
+const createNew = require("../controllers/createNew.js")
 
 module.exports = function(app){
 // index page
@@ -9,8 +11,20 @@ module.exports = function(app){
 
   app.post('/login', user.login);
 
-  // app.get('/donations', user.donation)
-  //
-  // app.get('/createNew', user.createNew)
+  app.use(authenticateUser);
 
+
+  app.get('/donations', user.donations);
+
+  app.get('/createNew', user.createNew);
+
+  app.post('/newOrder', createNew.newOrder);
+
+}
+function authenticateUser(req, res, next){
+  if(!req.session.user_id){
+    res.redirect('/login');
+  }else{
+    next();
+  }
 }

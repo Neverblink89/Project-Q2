@@ -40,13 +40,13 @@
   }
 
   .logout {
-    float: right;
+    margin-left: 58em;
   }
 
   .donation-container {
     height: 100%;
-    padding: 0;
-    margin: 0;
+    width: 30em;
+    margin:auto;
     display: -webkit-box;
     display: -moz-box;
     display: -ms-flexbox;
@@ -54,6 +54,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
   }
 
   .row {
@@ -62,16 +63,27 @@
   }
 
   .flex-item {
-    background-color: tomato;
+    border: 1px solid grey;
     padding: 5px;
-    width: 30em;
-    height: 20px;
+    width: 25em;
+    height: 5em;
     margin: 10px;
     line-height: 20px;
     color: white;
     font-weight: bold;
     font-size: 2em;
     text-align: center;
+    display: flex;
+    flex-direction:row;
+  }
+  .business-image{
+    height: 100%;
+    border: 1px solid black;
+    flex: 1;
+  }
+  .description{
+    border: 1px solid black;
+    flex-grow: 3;
   }
 </style>
 
@@ -86,15 +98,39 @@
       <li class=""><a href="#">Our mission</a></li>
       <li><a href="#">Support</a></li>
       <li><a href="#">About</a></li>
-      <li><a class="logout" href="#">Logout</a></li>
+      <li class="logout"><a class="logout" href="#">Logout</a></li>
     </ul>
   </div>
   <div class="donation-container">
     <div class="row">
-      <div class="flex-item">1</div>
-      <div class="flex-item">2</div>
-      <div class="flex-item">3</div>
-      <div class="flex-item">4</div>
+      <div class="flex-item">
+        <div class="business-image">
+          <img src="" alt="">
+          </div>
+          <div class="description">
+          </div>
+      </div>
+      <div class="flex-item">
+        <div class="business-image">
+          <img src="" alt="">
+        </div>
+        <div class="description">
+        </div>
+      </div>
+      <div class="flex-item">
+        <div class="business-image">
+          <img src="" alt="">
+        </div>
+        <div class="description">
+        </div>
+      </div>
+      <div class="flex-item">
+        <div class="business-image">
+          <img src="" alt="">
+        </div>
+        <div class="description">
+        </div>
+      </div>
     </div>
   </div>
 </body>

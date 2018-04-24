@@ -130,15 +130,16 @@ body{
 </div>
 <div id="modal-wrapper" class="modal">
 
-  <form class="modal-content animate" action="/registration">
+
 
     <div class="container">
       <h2>registration</h2>
-      <input type="text" placeholder="Enter Username" name="uname">
-      <input type="password" placeholder="Enter Password" name="psw">
-      <input type="email" name="email" placeholder="email"value="">
-      <input type="text" name="phone" placeholder="phone"value="">
-      <input type="text" name="avatar_img" placeholder="img_url"value="">
+      <form class="modal-content animate" action="/registration" method="post">
+      <input type="text" placeholder="Enter Username" name="name">
+      <input type="password" placeholder="Enter Password" name="password">
+      <input type="email" name="email" placeholder="email">
+      <input type="text" name="phone" placeholder="phone">
+      <input type="text" name="avatar_img" placeholder="img_url">
       <select class="" name="user_type">
         <option value="donor">Donor</option>
         <option value="charity">Charity</option>

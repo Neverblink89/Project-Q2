@@ -21,11 +21,13 @@ module.exports = {
         hasher.check(user, req.body).then((isMatch) => {
           if (isMatch) {
             req.session.user_id = user.id;
+            req.session.user_type = user.user_type;
             req.session.save(() => {
               if (user.user_type === "charity") {
-                res.redirect('/');
+                res.redirect('/donations');
+
               } else if (user.user_type === "donor") {
-                res.redirect('/');
+                res.redirect('/createNew');
               }
             }).catch(() => {
               res.redirect('/');
@@ -50,23 +52,32 @@ module.exports = {
       })
     })
   },
+  createNew: (req, res)=>{
+    if(req.session.user_type !== "donor"){
+      res.redirect("/");
+      return;
+    }//add this route before any route that is only for donor access
+    knex('user')
+    .where('user.user_type', 'donor')
+    .andWhere('user.id', req.session.user_id)
+    .then(()=>{
+      res.render('createNew');
+    })
+  },
+  donations: (req, res)=>{
+      if(req.session.user_type !== "charity"){
+        res.redirect("/");
+        return;
+      }//add this before any route that is only for charity access
+      knex('user')
+      .where('user.user_type', 'charity')
+      .andWhere('user.id', req.session.user_id)
+      .then(()=>{
+        knex('order')
+        .then((data)=>{
+          res.render('donations', {donations:data})
+        })
+      })
+    }
 
-//   donation: (req, res)=>{
-//     knex('user')
-//     .where('user.user_type', 'charity')
-//     .andWhere('user.id', req.session.user_id)
-//     .then(()=>{
-//       knex('order')
-//       .then((data)=>{
-//         res.render('donations', {donations:data})
-//       })
-//     })
-//   },
-//   createNew: (req, res)=>{
-//     knex('user')
-//     .where('user.user_type', 'charity')
-//     .andWhere('user.id', req.session.user_id)
-//     .then(()=>{
-//     })
-//   }
 }

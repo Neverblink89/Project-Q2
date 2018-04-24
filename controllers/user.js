@@ -14,6 +14,7 @@ module.exports = {
     })
   },
   login: (req, res) => {
+    console.log("running me");
     knex('user')
       .where('email', req.body.email)
       .then((result) => {
@@ -32,6 +33,9 @@ module.exports = {
             }).catch(() => {
               res.redirect('/');
             })
+          }else{
+            console.log("no match");
+            res.redirect('/')
           }
         })
       })

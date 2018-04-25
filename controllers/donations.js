@@ -17,7 +17,6 @@ update: (req, res)=>{
   })
 },
 note: (req, res)=>{
-
   knex('note').where('id', req.params.id).insert({
     comment: req.body.comment,
     user_id: req.session.user_id,
@@ -27,5 +26,8 @@ note: (req, res)=>{
 
   })
 },
-
+//donor_view_order: (req, res)=>{
+  //knex('order').where('id', req.params.id).then((result)=>{
+  //  knex()
+//  })
 }

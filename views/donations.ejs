@@ -75,12 +75,17 @@
     text-align: center;
     float: right;
     margin-top: 1em;
+    text-decoration: none;
+    line-height: 2em;
   }
   .box {
     height: 100%;
     width: 43%;
     display: inline-block;
     margin: 0 auto;
+  }
+  .container{
+  margin-top: 10em;
   }
   .list {
     height: 10em;
@@ -92,7 +97,6 @@
     -moz-box-shadow: 0 0 4px #ccc;
     -webkit-box-shadow: 0 0 4px #ccc;
     box-shadow: 0 0 4px #ccc;
-    margin-top: 10em;
   }
   .images{
     margin-top: 1em;
@@ -102,6 +106,7 @@
   .name{
 
   }
+
 </style>
 <head>
   <meta charset="utf-8">
@@ -119,6 +124,8 @@
       <li><a href="/logout">Logout</a></li>
     </ul>
   </div>
+<div class="container">
+
 
 
   <% for(let i=0;i<donations.length;i++){  %>
@@ -141,7 +148,7 @@
 
     </div>
       <% } %>
-
+</div>
 
   </div>
 </body>

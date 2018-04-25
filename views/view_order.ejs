@@ -56,12 +56,17 @@
       height:100%;
     }
     .form-container{
-
-    margin: auto;
-    width: 50%;
-    border: 3px solid green;
-    padding: 10px;
-    margin-top: 5em;
+    height: 30em;
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+    }
+    .container{
+      width: 70%;
+      height: 30em;
+      padding: 10px;
+      margin:auto;
+      margin-top: 10em;
     }
     .button {
       background-color: #176ac4;
@@ -75,9 +80,32 @@
       -webkit-box-shadow: 0 0 3px #ccc;
       box-shadow: 0 0 3px #ccc;
       text-align: center;
-      float: right;
       margin-top: 1em;
     }
+    .button-container{
+      width: 20%;
+      margin:auto;
+      border: 1px solid black;
+      height: 20em;
+      text-align: center;
+    }
+    .confirm{
+      text-decoration: none;
+      color: white;
+    }
+    .title{
+      text-align: center;
+      margin: auto;
+    }
+    textarea#styled {
+	width: 600px;
+	height: 120px;
+	border: 3px solid #cccccc;
+	padding: 5px;
+	font-family: Tahoma, sans-serif;
+	background-position: bottom right;
+	background-repeat: no-repeat;
+}
     </style>
   </head>
   <body>
@@ -93,21 +121,22 @@
         <li><a class="logout" href="/logout">Logout</a></li>
       </ul>
     </div>
+<div class="container">
+
 
 
       <div class="form-container">
-        <div class="button-container">
-          <button><a href="/update/<%=order.id%>">Confirm</a></button>
-
-          <h1>Test button for adding a note</h1>
-
           <form action="/note/<%=note.id%>" id="usrform" method="post">
-
-            <textarea rows="14" cols="50" name="comment" form="usrform" placeholder="Enter a new note"></textarea>
+            <div class="title">
+            <h2>Communication form</h2>
+            <p>add a descriptive note for the donors</p>
+              </div>
+            <textarea id="styled"rows="14" cols="100" name="comment" form="usrform" placeholder="Enter a new note"></textarea>
             <br>
-            <button class=""type="submit">Submit</button>
+            <button class="button"type="submit">Submit</button>
+            <button class="button"><a class="confirm"href="/update/<%=order.id%>">Confirm</a></button>
           </form>
-      </div>
+          </div>
 
     </div>
   </body>

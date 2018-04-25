@@ -86,6 +86,10 @@ module.exports = {
           res.render('donations', {donations:data[0]})
         })
       })
-    }
+    },
+    logout: (req, res) => {
+      req.session.destroy();
+      res.redirect('/');
+  }
 
 }

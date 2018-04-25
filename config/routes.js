@@ -30,7 +30,9 @@ module.exports = function(app){
 
   app.post('/note/:id', donations.note);
 
+  //app.get('/donorViewOrder/:id', donations.donor_view_order);
 
+  app.get('/logout', user.logout);
 
 }
 function authenticateUser(req, res, next){

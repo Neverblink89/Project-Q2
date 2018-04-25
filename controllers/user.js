@@ -93,12 +93,12 @@ module.exports = {
         knex('order')
           .join("user", "order.user_id", "user.id")
           .then((data)=>{
-            console.log(data);
             res.render('donations', {donations:data})
           })
     },
     logout: (req, res) => {
       req.session.destroy();
+      req.session.save();
       res.redirect('/');
   }
 

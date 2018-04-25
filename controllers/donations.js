@@ -17,7 +17,7 @@ update: (req, res)=>{
   })
 },
 note: (req, res)=>{
-  
+
   knex('note').where('id', req.params.id).insert({
     comment: req.body.comment,
     user_id: req.session.user_id,
@@ -26,5 +26,6 @@ note: (req, res)=>{
     res.redirect(`/viewOrder/${req.params.id}`);
 
   })
-}
+},
+
 }

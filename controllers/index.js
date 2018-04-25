@@ -13,11 +13,11 @@ module.exports = {
            req.session.user_id = user.id;
            req.session.save(()=>{
              if(user.user_type === "charity"){
-             res.redirect('/charity_dashboard');
+             res.redirect('/donations');
 
          }else if
            (user.user_type === "donor"){
-           res.redirect('/donor_dashboard');
+           res.redirect('/createNew');
          }
        }).catch(()=>{
          res.redirect('/');

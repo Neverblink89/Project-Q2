@@ -69,7 +69,7 @@ module.exports = {
     .andWhere('user.id', req.session.user_id)
     .then((result)=>{
       res.render('createNew', {user: result[0]});
-    
+
     })
   },
   donations: (req, res)=>{
@@ -83,7 +83,7 @@ module.exports = {
       .then(()=>{
         knex('order')
         .then((data)=>{
-          res.render('donations', {donations:data})
+          res.render('donations', {donations:data[0]})
         })
       })
     }

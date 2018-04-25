@@ -5,9 +5,19 @@
     <title>Charity View Order</title>
   </head>
   <body>
-    <h1>Jodan, see test button below!</h1>
+    <h1>Test button for changing confirmation status</h1>
     <div class="button-container">
       <button><a href="/update/<%=order.id%>">Confirm</a></button>
+
+      <h1>Test button for adding a note</h1>
+
+      <form action="/note/<%=note.id%>" id="usrform" method="post">
+
+        <textarea rows="14" cols="50" name="comment" form="usrform" placeholder="Enter a new note"></textarea>
+        <br>
+        <button type="submit">Submit</button>
+      </form>
+
 
     </div>
   </body>

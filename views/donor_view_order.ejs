@@ -75,5 +75,14 @@ body {
         <li><a href="/logout">Logout</a></li>
       </ul>
     </div>
+
+    <h2>Test button to delete an order</h2>
+    <button><a href="/delete/<%=order.id%>">Delete Order</a></button>
+
+    <h2>Test button to mark an order as complete</h2>
+    <button><a href="/updates/<%=order.id%>">Mark as Complete</a></button>
+
+    <h2>Test button to update anything on an order</h2>
+    <button><a href="/edit/<%=order.id%>">Update Order</a></button>
   </body>
 </html>

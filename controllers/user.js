@@ -14,7 +14,6 @@ module.exports = {
     })
   },
   login: (req, res) => {
-
     knex('user')
       .where('email', req.body.email)
       .then((result) => {

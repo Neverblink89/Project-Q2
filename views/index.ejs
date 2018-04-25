@@ -254,8 +254,10 @@
       <li><a href="#">Support</a></li>
       <% if(user_id && user_type === "donor"){ %>
       <li><a href="/donorSummary">Your donations</a></li>
+      <li><a href="/logout">Log-out</a></li>
       <%} else if(user_id && user_type === "charity"){ %>
-      <li><a href="/donations">Orders</a></li>
+      <li><a class="login"href="/donations">Orders</a></li>
+      <li><a class="login"href="/logout">Log-out</a></li>
       <%}%>
       <% if(!user_id){ %>
         <li><a onclick="document.getElementById('modal-wrapper1').style.display='block'" class="login" href="#">Register</a></li>

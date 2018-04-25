@@ -3,16 +3,30 @@ const hasher = require("../config/hasher.js");
 
 module.exports = {
   home: function(req, res) {
-    knex('user').then((results) => {
-      if (req.session.errors) {
-        req.session.errors = [];
+    knex('user').then((results)=>{
+       if(req.session.errors){
+       req.session.errors = [];
+     }
+      if(req.session.user_id) {
+        res.render('index', {
+          users: results,
+          errors: req.session.errors,
+          user_id: req.session.user_id,
+          user_type: req.session.user_type
+        });
+      } else {
+        res.render('index', {
+          users: results,
+          errors: req.session.errors,
+          user_id: false,
+          user_type: false
+        });
       }
-      res.render('index', {
-        users: results,
-        errors: req.session.errors
-      });
+    }).catch((e) => {
+      // res.redirect('/')
+      console.log(e)
     })
-  },
+   },
   login: (req, res) => {
 
     knex('user')

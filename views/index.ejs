@@ -248,14 +248,19 @@
   </div>
   <div id="navbar">
     <ul>
-
       <li class="left"><a href="#">Our mission</a></li>
       <li class="left"><a href="#">Solutions</a></li>
       <li class="left"><a href="#">How we can help</a></li>
       <li><a href="#">Support</a></li>
-      <li><a href="#">About</a></li>
-      <li><a onclick="document.getElementById('modal-wrapper1').style.display='block'" class="login" href="#">Register</a></li>
-      <li><a class="login" onclick="document.getElementById('modal-wrapper').style.display='block'" href="#">Login</a></li>
+      <% if(user_id && user_type === "donor"){ %>
+      <li><a href="/donorSummary">Your donations</a></li>
+      <%} else if(user_id && user_type === "charity"){ %>
+      <li><a href="/donations">Orders</a></li>
+      <%}%>
+      <% if(!user_id){ %>
+        <li><a onclick="document.getElementById('modal-wrapper1').style.display='block'" class="login" href="#">Register</a></li>
+        <li><a class="login" onclick="document.getElementById('modal-wrapper').style.display='block'" href="#">Login</a></li>
+      <% } %>
     </ul>
   </div>
   <div class="img-container">

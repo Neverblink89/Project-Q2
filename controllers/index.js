@@ -2,15 +2,6 @@ const knex = require("../db/knex.js");
 const hasher = require("../config/hasher.js");
 
 module.exports = {
-  home: function(req, res) {
-    knex('user').then((results)=>{
-       if(req.session.errors){
-       req.session.errors = [];
-     }
-       res.render('index', {users: results, errors: req.session.errors});
-     })
-   },
-
    login: (req,res)=>{
      knex('user')
        .where('email', req.body.email)

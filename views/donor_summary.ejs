@@ -41,7 +41,7 @@
   }
 
   .logout {
-    margin-left: 58em;
+    float: right;
   }
 
   .row {
@@ -65,11 +65,11 @@
   .button {
     background-color: #176ac4;
     color: white;
-    height: 2em;
-    width: 6em;
+    height: 2.5em;
+    width: 10em;
     border: none;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 16px;
     bmoz-box-shadow: 0 0 3px #ccc;
     -webkit-box-shadow: 0 0 3px #ccc;
     box-shadow: 0 0 3px #ccc;
@@ -107,7 +107,6 @@
 
   }
 </style>
-<<<<<<< HEAD
 <head>
   <meta charset="utf-8">
   <title></title>
@@ -121,7 +120,8 @@
       <li class=""><a href="#">Our mission</a></li>
       <li><a href="#">Support</a></li>
       <li><a href="#">About</a></li>
-      <li class="logout"><a class="logout" href="#">Logout</a></li>
+      <li class="logout"><a href="/logout">Logout</a></li>
+      <li class="logout"><a href="/">Home</a></li>
     </ul>
   </div>
   <div id="confirmed" class="list">
@@ -129,50 +129,24 @@
             <div class="images">
             <b>Order number:</b>
             <br>
+            <br>
             <b>Date:</b>
             <br>
-            <p style="margin-top:4em;"><b>Description:</b></p>
+            <p style="margin-top:2em;"><b>Description: </b></p>
 
           </div>
           </div>
           <div class="box">
-            <button class="button" type="submit" href="">Completed</button>
+            <button class="button" type="submit" href="/donor/view_order/">Mark as completed</button>
               <br>
               <br>
               <br>
               <br>
               <br>
-              <button class="button" type="submit" href="">Edit</button>
+              <button class="button" type="submit" href="">Edit Donation</button>
 
           </div>
         </div>
-=======
-  <head>
-    <meta charset="utf-8">
-    <title>Donor Summary</title>
-  </head>
-  <body>
-
-    <div class="logo-div">
-    <img class="logo" src="/images/food.png" alt="">
-    </div>
-    <div id="navbar">
-      <ul>
-
-        <li class="left"><a href="#">Our mission</a></li>
-        <li class="left"><a href="#">Solutions</a></li>
-        <li class="left"><a href="#">How we can help</a></li>
-        <li><a href="#">Support</a></li>
-        <li><a href="#">About</a></li>
-        <li><a onclick="document.getElementById('modal-wrapper1').style.display='block'" class="login" href="#">Register</a></li>
-        <li><a class="login" onclick="document.getElementById('modal-wrapper').style.display='block'" href="#">Login</a></li>
-        <li><a href="/logout">Logout</a></li>
-      </ul>
-    </div>
-    <div class="transparent">
-    <div class="view-container">
-    </div>
->>>>>>> 44fe6c8d6f7118845c4d23435ef67b915b7b4cc4
     </div>
   </div>
 </body>

@@ -1,23 +1,113 @@
 <!DOCTYPE html>
 <html>
   <head>
+
     <meta charset="utf-8">
     <title>Charity View Order</title>
+    <style media="screen">
+    #navbar{
+      border: 1px solid grey;
+    }
+    #navbar ul {
+      margin: 0;
+      padding: 5px;
+      list-style-type: none;
+      text-align: left;
+      background-color: #176ac4;
+      height: 4em;
+      line-height: 4em;
+    }
+
+    #navbar ul li {
+      display: inline;
+    }
+
+    #navbar ul li a {
+      text-decoration: none;
+      padding: .2em 1em;
+      margin-left: 2em;
+      color: #fff;
+      z-index: 2;
+
+    }
+
+    #navbar ul li a:hover {
+      color: #000;
+      background: rgba(255, 255, 255, 0.5);
+      height: 100%;
+    }
+
+    .logout {
+      float: right;
+    }
+    body{
+      background: #F7F7F7;
+    }
+    .logo-div {
+      z-index: 2;
+      position: absolute;
+      width: 19%;
+      height: 26%;
+      margin-left: 36em;
+    }
+    .logo{
+      z-index: 2;
+      width: 100%;
+      height:100%;
+    }
+    .form-container{
+
+    margin: auto;
+    width: 50%;
+    border: 3px solid green;
+    padding: 10px;
+    margin-top: 5em;
+    }
+    .button {
+      background-color: #176ac4;
+      color: white;
+      height: 2em;
+      width: 6em;
+      border: none;
+      cursor: pointer;
+      font-size: 20px;
+      bmoz-box-shadow: 0 0 3px #ccc;
+      -webkit-box-shadow: 0 0 3px #ccc;
+      box-shadow: 0 0 3px #ccc;
+      text-align: center;
+      float: right;
+      margin-top: 1em;
+    }
+    </style>
   </head>
   <body>
-    <h1>Test button for changing confirmation status</h1>
-    <div class="button-container">
-      <button><a href="/update/<%=order.id%>">Confirm</a></button>
+    <div class="logo-div">
+    <img class="logo" src="/images/food.png" alt="">
+  </div>
+    <div id="navbar">
+      <ul>
+        <li class=""><a href="#">Our mission</a></li>
+        <li><a href="/">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li> <a class="logout" href="/donorSummary">View your orders</a></li>
+        <li><a class="logout" href="/logout">Logout</a></li>
+      </ul>
+    </div>
 
-      <h1>Test button for adding a note</h1>
 
-      <form action="/note/<%=note.id%>" id="usrform" method="post">
+      <div class="form-container">
+        <div class="button-container">
+          <button><a href="/update/<%=order.id%>">Confirm</a></button>
 
-        <textarea rows="14" cols="50" name="comment" form="usrform" placeholder="Enter a new note"></textarea>
-        <br>
-        <button type="submit">Submit</button>
-      </form>
+          <h1>Test button for adding a note</h1>
 
+          <form action="/note/<%=note.id%>" id="usrform" method="post">
+
+            <textarea rows="14" cols="50" name="comment" form="usrform" placeholder="Enter a new note"></textarea>
+            <br>
+            <button class=""type="submit">Submit</button>
+          </form>
+      </div>
 
     </div>
   </body>

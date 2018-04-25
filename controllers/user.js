@@ -90,15 +90,12 @@ module.exports = {
         res.redirect("/");
         return;
       }//add this before any route that is only for charity access
-      knex('user')
-      .where('user.user_type', 'charity')
-      .andWhere('user.id', req.session.user_id)
-      .then(()=>{
         knex('order')
-        .then((data)=>{
-          res.render('donations', {donations:data[0]})
-        })
-      })
+          .join("user", "order.user_id", "user.id")
+          .then((data)=>{
+            console.log(data);
+            res.render('donations', {donations:data})
+          })
     },
     logout: (req, res) => {
       req.session.destroy();

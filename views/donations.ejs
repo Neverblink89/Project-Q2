@@ -119,22 +119,30 @@
       <li><a href="/logout">Logout</a></li>
     </ul>
   </div>
-  <div id="confirmed" class="list">
+
+
+  <% for(let i=0;i<donations.length;i++){  %>
+  <div class="list">
           <div class="box">
+
             <div class="images">
-          <img class="images"src="https://www.envision-creative.com/wp-content/uploads/archive/Serranos.png" alt="">
+          <img class="images"src="<%=donations[i].avatar_img%>" alt="">
           </div>
           </div>
           <div class="box">
-            <h2 style="text-align:right;">date:</h2>
+            <h2 style="text-align:right;">Date: <%=(donations[i].date + "").slice(0,15)%> </h2>
               <br>
           <div class="description">
             <div class="button-container">
-              <button class="button" type="submit" href="/viewOrder/<%=donations.id%>">View</button>
+              <a class="button" type="submit" href="/viewOrder/<%=donations[i].id%>">View</a>
             </div>
           </div>
         </div>
+
     </div>
+      <% } %>
+
+
   </div>
 </body>
 

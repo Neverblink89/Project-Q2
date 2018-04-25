@@ -30,7 +30,13 @@ module.exports = function(app){
 
   app.post('/note/:id', donations.note);
 
-  //app.get('/donorViewOrder/:id', donations.donor_view_order);
+  app.get('/donorViewOrder/:id', donations.donor_view_order);
+
+  app.get('/delete/:id', donations.delete);
+
+  app.get('/updates/:id', donations.update_completed);
+
+  app.post('/edit/:id', donations.edit);
 
   app.get('/logout', user.logout);
 

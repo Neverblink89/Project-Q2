@@ -26,8 +26,39 @@ note: (req, res)=>{
 
   })
 },
-//donor_view_order: (req, res)=>{
-  //knex('order').where('id', req.params.id).then((result)=>{
-  //  knex()
-//  })
+donor_view_order: (req, res)=>{
+  knex('order').where('id', req.params.id).then((result)=>{
+    knex('note').where('id', req.params.id).then((results)=>{
+      res.render('donor_view_order', {order: result[0], note: results[0]});
+    })
+  })
+},
+delete: (req, res)=>{
+  knex('order').where('id', req.params.id).delete().then(()=>{
+    res.redirect('/donorSummary');
+  })
+},
+update_completed: (req, res)=>{
+  knex('order').where('id', req.params.id).update({
+    confirmation: "completed"
+  }).then(()=>{
+    res.redirect('/donorSummary');
+  })
+},
+edit: (req, res)=>{
+  knex('order').where('id', req.params.id).update({
+    description: req.body.description,
+    size: req.body.size,
+    date: req.body.date,
+    deadline: req.body.deadline,
+    address: req.body.address,
+    confirmation: req.body.confirmation,
+    tax_value: req.body.tax_value
+  }).then(()=>{
+    res.redirect('/donorSummary');
+  })
+}
+
+
+
 }

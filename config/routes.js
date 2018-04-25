@@ -24,13 +24,13 @@ module.exports = function(app){
 
   app.post('/newOrder/:id', createNew.newOrder);
 
-  app.get('/ViewOrder/:id', donations.view_order);
+  app.get('/viewOrder/:id', donations.view_order);
 
   app.get('/update/:id', donations.update);
 
   app.post('/note/:id', donations.note);
 
-  
+
 
 }
 function authenticateUser(req, res, next){

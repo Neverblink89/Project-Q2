@@ -5,7 +5,7 @@ module.exports = {
 view_order: (req, res)=>{
   knex('order').where('id', req.params.id).then((result)=>{
     knex('note').where('id', req.params.id).then((results)=>{
-      res.render('view_order', {order: result[0], note: results[0]});
+      res.render('view_order', {order: result[0], note: results});
     })
   })
 },

@@ -343,44 +343,46 @@
   </div>
   <div class="form-container">
     <a style=" color:red;float:right;" class="btn-delete" href="/delete/<%=order.id%>">Delete Order</a>
-    <form class="form-inner-container">
+    <form class="form-inner-container" action="/edit/<%=order.id%>" method="post">
       <br>
       <div class="group">
-        <input type="text" name="description" required>
+        <input type="text" name="description" value="<%=order.description%>" required>
         <span class="highlight"></span>
         <span class="bar"></span>
         <label>Food Description</label>
       </div>
       <div class="group">
-        <input type="text" name="size" required>
+        <input type="text" name="size" value="<%=order.size%>" required>
         <span class="highlight"></span>
         <span class="bar"></span>
         <label>Approximate weight</label>
       </div>
       <div class="group">
-        <input style="color:#999;" type="date" name="date" required>
+
+        <input style="color:#999;" type="date" name="date" value="<%=order.date.toLocaleDateString("en-US", {year:"numeric"})%>-<%=order.date.toLocaleDateString("en-US", {month:"2-digit"})%>-<%=order.date.toLocaleDateString("en-US", {day:"2-digit"})%>" required>
         <span class="highlight"></span>
         <span class="bar"></span>
+
       </div>
       <div class="group">
-        <input type="text" name="deadline" required>
+        <input type="text" name="deadline" value="<%=order.deadline%>" required>
         <span class="highlight"></span>
         <span class="bar"></span>
         <label>Deadline</label>
       </div>
       <div class="group">
-        <input type="text" name="tax_value" required>
+        <input type="text" name="tax_value" value="<%=order.tax_value%>"required>
         <span class="highlight"></span>
         <span class="bar"></span>
         <label>Tax value</label>
       </div>
       <div class="group">
-        <input type="text" name="address" required>
+        <input type="text" name="address" value="<%=order.address%>" required>
         <span class="highlight"></span>
         <span class="bar"></span>
         <label>Address</label>
       </div>
-      <a class="btn" href="/edit/<%=order.id%>">Update Order</a>
+      <button class="btn" type="submit">Update Order</button>
     </form>
   </div>
 </body>

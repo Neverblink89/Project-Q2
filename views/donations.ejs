@@ -6,10 +6,11 @@
     height: 100%;
   }
 
-  body{
-    background: #F7F7F7;
+  body {
+    background: #F6F6F6;
     font-family: Tahoma, sans-serif;
     margin: 0;
+    color: #333;
   }
 
   #navbar ul {
@@ -58,10 +59,11 @@
     height: 26%;
     margin-left: 36em;
   }
-  .logo{
+
+  .logo {
     z-index: 2;
     width: 100%;
-    height:100%;
+    height: 100%;
   }
 
   .button {
@@ -81,15 +83,18 @@
     text-decoration: none;
     line-height: 2em;
   }
+
   .box {
     height: 100%;
     width: 43%;
     display: inline-block;
     margin: 0 auto;
   }
-  .container{
-  margin-top: 10em;
+
+  .container {
+    margin-top: 2em;
   }
+
   .list {
     height: 10em;
     width: 50%;
@@ -100,27 +105,86 @@
     -moz-box-shadow: 0 0 4px #ccc;
     -webkit-box-shadow: 0 0 4px #ccc;
     box-shadow: 0 0 4px #ccc;
+    background: white;
   }
-  .images{
+
+  .images {
     margin-top: 1em;
     height: 80%;
     width: 80%;
   }
-  .name{
-  }
-  .title{
-    text-align: center;
-    margin-top: 5px;
+  .donor-title {
+    height: 7em;
+    -moz-box-shadow: 0 0 4px #ccc;
+    -webkit-box-shadow: 0 0 4px #ccc;
+    box-shadow: 0 0 4px #ccc;
+    background: #F6F6F6;
+    position: relative;
+    font-family: Arial, Verdana, Sans-Serif;
+    color: #333;
+
+
+
   }
 
+  .dashboard {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 70%;
+    width: 90%;
+
+  }
+
+  .item-container {
+    float: left;
+    height: 65px;
+    width: 130px;
+    font-size: 22px;
+    font-weight: 700;
+    margin-top: 10px;
+  }
+
+  .item-container-link {
+    float: left;
+    height: 65px;
+    width: 180px;
+    font-size: 22px;
+    font-weight: 700;
+    margin-top: 10px;
+    margin-left: 1em;
+  }
+
+  .links {
+    text-decoration: none;
+    color: #ECC22B;
+    float: left;
+    margin-left: 1em;
+    font-size: 18px;
+    margin-top: 15px;
+    font-weight: 600;
+  }
+
+  .links:hover {
+    color: #333;
+  }
+
+  .title {
+    height: 3em;
+    text-align: center;
+    margin-top: 2em;
+  }
 </style>
+
 <head>
   <meta charset="utf-8">
   <title></title>
 </head>
+
 <body>
   <div class="logo-div">
-  <img class="logo" src="/images/food.png" alt="">
+    <img class="logo" src="/images/food.png" alt="">
   </div>
   <div id="navbar">
     <ul>
@@ -129,26 +193,40 @@
       <li><a href="#">About</a></li>
       <li><a class="logout" href="/logout">Logout</a></li>
       <li> <a class="logout" href="/charitySummary">View Your Orders</a></li>
-
     </ul>
   </div>
 <div class="container">
 
 <h2 class="title">Availble Donations</h2>
+  <div class="donor-title">
+    <div class="dashboard">
+      <div class="item-container">
+        Serrano's Dashboard
+      </div>
+      <div class="item-container-link">
+        <a class="links" href="/charitySummary">Your Donation Pickups</a>
+      </div>
+      <div class="item-container-link">
+        <a class="links" href="#">Settings</a>
+      </div>
+    </div>
+  </div>
+  <div class="title">
+    <h1>Donations available for pickup</h1>
+  </div>
 
+  <div class="container">
+    <% for(let i=0;i<donations.length;i++){  %>
+      <div class="list">
+        <div class="box">
 
-  <% for(let i=0;i<donations.length;i++){  %>
-  <div class="list">
-          <div class="box">
-
-            <div class="images">
-          <img class="images"src="<%=donations[i].avatar_img%>" alt="">
+          <div class="images">
+            <img class="images" src="<%=donations[i].avatar_img%>" alt="">
           </div>
-          </div>
-          <div class="box">
-            <h3 style="text-align:right;"><%=(donations[i].date + "").slice(0,15)%> </h3>
-              
-            <h3 tyle="text-align:right;"><%=donations[i].id%></h3>
+        </div>
+        <div class="box">
+          <h2 style="text-align:right;"><%=(donations[i].date + "").slice(0,15)%> </h2>
+          <br>
           <div class="description">
             <div class="button-container">
               <a class="button" type="submit" href="/viewOrder/<%=donations[i].id%>">View</a>
@@ -156,9 +234,9 @@
           </div>
         </div>
 
-    </div>
+      </div>
       <% } %>
-</div>
+  </div>
 
   </div>
 </body>

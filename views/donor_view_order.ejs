@@ -1,15 +1,16 @@
-
 <!DOCTYPE html>
 <html>
 <style media="screen">
-body{
-  background: #F7F7F7;
-  font-family: Tahoma, sans-serif;
-  margin: 0;
-}
-#navbar{
-  border-bottom: 2px solid white;
-}
+  body {
+    background: #F7F7F7;
+    font-family: Tahoma, sans-serif;
+    margin: 0;
+  }
+
+  #navbar {
+    border-bottom: 2px solid white;
+  }
+
   #navbar ul {
     margin: 0;
     padding: 5px;
@@ -38,22 +39,26 @@ body{
     background: rgba(255, 255, 255, 0.5);
     height: 100%;
   }
+
   .logo-div {
     z-index: 2;
     position: absolute;
     width: 19%;
     height: 26%;
-      margin-left: 36em;
+    margin-left: 36em;
   }
-  .logo{
+
+  .logo {
     z-index: 2;
     width: 100%;
-    height:100%;
+    height: 100%;
   }
-  .left{
+
+  .left {
     float: left;
     color: white;
   }
+
   .list {
     height: 10em;
     width: 50%;
@@ -65,6 +70,7 @@ body{
     -webkit-box-shadow: 0 0 4px #ccc;
     box-shadow: 0 0 4px #ccc;
   }
+
   .box {
     height: 100%;
     width: 43%;
@@ -72,190 +78,323 @@ body{
     margin: 0 auto;
   }
 
-    .button {
-      background-color: #176ac4;
-      color: white;
-      height: 2em;
-      width: 6em;
-      border: none;
-      cursor: pointer;
-      font-size: 20px;
-      bmoz-box-shadow: 0 0 3px #ccc;
-      -webkit-box-shadow: 0 0 3px #ccc;
-      box-shadow: 0 0 3px #ccc;
-      text-align: center;
-      padding: 10px;
-      margin-top: 2em;
-      text-decoration: none;
-      line-height: 2em;
-    }
-    .images{
-      margin-top: 1em;
-      height: 80%;
-      width: 80%;
-    }
-    .container{
+  .button {
+    background-color: #176ac4;
+    color: white;
+    height: 2em;
+    width: 6em;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    bmoz-box-shadow: 0 0 3px #ccc;
+    -webkit-box-shadow: 0 0 3px #ccc;
+    box-shadow: 0 0 3px #ccc;
+    text-align: center;
+    padding: 10px;
+    margin-top: 2em;
+    text-decoration: none;
+    line-height: 2em;
+  }
+
+  .images {
+    margin-top: 1em;
+    height: 80%;
+    width: 80%;
+  }
+
+  .container {
     margin-top: 10em;
+  }
+
+  .form-container {
+    font-family: 'Roboto';
+    width: 600px;
+    margin: 0px auto 0;
+    display: block;
+    background: #FFF;
+    padding: 10px 50px 50px;
+    bmoz-box-shadow: 0 0 3px #ccc;
+    -webkit-box-shadow: 0 0 3px #ccc;
+    box-shadow: 0 0 3px #ccc;
+
+  }
+
+  .form-inner-container {
+    margin-top: 2em;
+    width: 50%;
+    margin-left: 25%;
+  }
+
+  .form-inner-container input {
+    font-size: 18px;
+    padding: 10px 10px 10px 5px;
+    width: 300px;
+    border: none;
+    border-bottom: 1px solid #757575;
+    background: white;
+
+  }
+
+  .btn-delete {
+    margin-top: 1em;
+    font-size: 16px;
+  }
+
+  .btn {
+    background-color: #176ac4;
+    color: white;
+    height: 2.5em;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    bmoz-box-shadow: 0 0 3px #ccc;
+    -webkit-box-shadow: 0 0 3px #ccc;
+    box-shadow: 0 0 3px #ccc;
+    text-align: center;
+    padding: 10px;
+    margin: auto;
+    margin-top: 22px;
+    line-height: 2.5em;
+    text-decoration: none;
+    width: 100px;
+    margin-left: 80px;
+
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  .group {
+    position: relative;
+    margin-bottom: 45px;
+  }
+
+  input {
+    font-size: 18px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    width: 300px;
+    border: none;
+    border-bottom: 1px solid #757575;
+  }
+
+  input:focus {
+    outline: none;
+  }
+
+  /* LABEL ======================================= */
+
+  label {
+    color: #999;
+    font-size: 18px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    top: 10px;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+  }
+
+  /* active state */
+
+  input:focus~label,
+  input:valid~label {
+    top: -20px;
+    font-size: 14px;
+    color: #5264AE;
+  }
+
+  /* BOTTOM BARS ================================= */
+
+  .bar {
+    position: relative;
+    display: block;
+    width: 300px;
+  }
+
+  .bar:before,
+  .bar:after {
+    content: '';
+    height: 2px;
+    width: 0;
+    bottom: 1px;
+    position: absolute;
+    background: #5264AE;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+  }
+
+  .bar:before {
+    left: 50%;
+  }
+
+  .bar:after {
+    right: 50%;
+  }
+
+  /* active state */
+
+  input:focus~.bar:before,
+  input:focus~.bar:after {
+    width: 50%;
+  }
+
+  /* HIGHLIGHTER ================================== */
+
+  .highlight {
+    position: absolute;
+    height: 60%;
+    width: 100px;
+    top: 25%;
+    left: 0;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+
+  /* active state */
+
+  input:focus~.highlight {
+    -webkit-animation: inputHighlighter 0.3s ease;
+    -moz-animation: inputHighlighter 0.3s ease;
+    animation: inputHighlighter 0.3s ease;
+  }
+
+  /* ANIMATIONS ================ */
+
+  @-webkit-keyframes inputHighlighter {
+    from {
+      background: #5264AE;
     }
-    .form-container{
-      font-family:'Roboto';
-       width:600px;
-       margin:0px auto 0;
-       display:block;
-       background:#FFF;
-       padding:10px 50px 50px;
-       bmoz-box-shadow: 0 0 3px #ccc;
-       -webkit-box-shadow: 0 0 3px #ccc;
-       box-shadow: 0 0 3px #ccc;
+    to {
+      width: 0;
+      background: transparent;
     }
-    .form-inner-container{
-      margin-top: 2em;
-      width:50%;
-      margin-left:25%;
+  }
+
+  @-moz-keyframes inputHighlighter {
+    from {
+      background: #5264AE;
     }
-    .form-inner-container input {
-      font-size:18px;
-      padding:10px 10px 10px 5px;
-      width:300px;
-      border:none;
-      border-bottom:1px solid #757575;
-      background: white;
-
+    to {
+      width: 0;
+      background: transparent;
     }
-    .btn-delete{
-      margin-top: 1em;
-      font-size: 16px;
+  }
+
+  @keyframes inputHighlighter {
+    from {
+      background: #5264AE;
     }
-    .btn {
-      background-color: #176ac4;
-      color: white;
-      height: 2.5em;
-      border: none;
-      cursor: pointer;
-      font-size: 16px;
-      bmoz-box-shadow: 0 0 3px #ccc;
-      -webkit-box-shadow: 0 0 3px #ccc;
-      box-shadow: 0 0 3px #ccc;
-      text-align: center;
-      padding: 10px;
-      margin: auto;
-      margin-top: 22px;
-      line-height: 2.5em;
-      text-decoration: none;
-      width: 100px;
-      margin-left: 80px;
+    to {
+      width: 0;
+      background: transparent;
+    }
+  }
 
-        }
-        a{
-          text-decoration: none;
-        }
+  .title {
+    height: 5em;
+    text-align: center;
+    margin-top: 7em;
+    color: #333;
+  }
 
-        .group            {
-        position:relative;
-        margin-bottom:45px;
-}
-input               {
-  font-size:18px;
-  padding:10px 10px 10px 5px;
-  display:block;
-  width:300px;
-  border:none;
-  border-bottom:1px solid #757575;
-}
-input:focus         { outline:none; }
+  .donor-title {
+    height: 7em;
+    -moz-box-shadow: 0 0 4px #ccc;
+    -webkit-box-shadow: 0 0 4px #ccc;
+    box-shadow: 0 0 4px #ccc;
+    background: #F6F6F6;
+    position: relative;
+    font-family: Arial, Verdana, Sans-Serif;
+    color: #333;
 
-/* LABEL ======================================= */
-label                {
-  color:#999;
-  font-size:18px;
-  font-weight:normal;
-  position:absolute;
-  pointer-events:none;
-  left:5px;
-  top:10px;
-  transition:0.2s ease all;
-  -moz-transition:0.2s ease all;
-  -webkit-transition:0.2s ease all;
-}
 
-/* active state */
-input:focus ~ label, input:valid ~ label        {
-  top:-20px;
-  font-size:14px;
-  color:#5264AE;
-}
 
-/* BOTTOM BARS ================================= */
-.bar    { position:relative; display:block; width:300px; }
-.bar:before, .bar:after     {
-  content:'';
-  height:2px;
-  width:0;
-  bottom:1px;
-  position:absolute;
-  background:#5264AE;
-  transition:0.2s ease all;
-  -moz-transition:0.2s ease all;
-  -webkit-transition:0.2s ease all;
-}
-.bar:before {
-  left:50%;
-}
-.bar:after {
-  right:50%;
-}
+  }
 
-/* active state */
-input:focus ~ .bar:before, input:focus ~ .bar:after {
-  width:50%;
-}
+  .dashboard {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 70%;
+    width: 90%;
 
-/* HIGHLIGHTER ================================== */
-.highlight {
-  position:absolute;
-  height:60%;
-  width:100px;
-  top:25%;
-  left:0;
-  pointer-events:none;
-  opacity:0.5;
-}
+  }
 
-/* active state */
-input:focus ~ .highlight {
-  -webkit-animation:inputHighlighter 0.3s ease;
-  -moz-animation:inputHighlighter 0.3s ease;
-  animation:inputHighlighter 0.3s ease;
-}
+  .item-container {
+    float: left;
+    height: 65px;
+    width: 130px;
+    font-size: 22px;
+    font-weight: 700;
+    margin-top: 10px;
+  }
 
-/* ANIMATIONS ================ */
-@-webkit-keyframes inputHighlighter {
-    from { background:#5264AE; }
-  to    { width:0; background:transparent; }
-}
-@-moz-keyframes inputHighlighter {
-    from { background:#5264AE; }
-  to    { width:0; background:transparent; }
-}
-@keyframes inputHighlighter {
-    from { background:#5264AE; }
-  to    { width:0; background:transparent; }
-}
-.title{
-  height: 5em;
-  text-align: center;
-  margin-top: 7em;
-  color: #333;
+  .item-container-link {
+    float: left;
+    height: 65px;
+    width: 180px;
+    font-size: 22px;
+    font-weight: 700;
+    margin-top: 10px;
+    margin-left: 1em;
+  }
 
-}
+  .links {
+    text-decoration: none;
+    color: #ECC22B;
+    float: left;
+    margin-left: 1em;
+    font-size: 18px;
+    margin-top: 15px;
+    font-weight: 600;
+  }
+
+  .links:hover {
+    color: #333;
+  }
+
+  .order-title {
+    height: 3em;
+    color: #176ac4;
+    text-align: center;
+  }
 </style>
-  <head>
-    <meta charset="utf-8">
-    <title>Donor Summary</title>
-  </head>
-  <body>
-    <div class="logo-div">
+
+<head>
+  <meta charset="utf-8">
+  <title>Donor Summary</title>
+</head>
+
+<body>
+  <div class="logo-div">
     <img class="logo" src="/images/food.png" alt="">
+  </div>
+  <div id="navbar">
+    <ul>
+      <li class="left"><a href="#">Our mission</a></li>
+      <li class="left"><a href="#">Solutions</a></li>
+      <li class="left"><a href="#">How we can help</a></li>
+      <li><a href="/">Home</a></li>
+      <li><a href="/logout">Logout</a></li>
+    </ul>
+  </div>
+  <div class="donor-title">
+    <div class="dashboard">
+      <div class="item-container">
+        Serrano's Dashboard
+      </div>
+      <div class="item-container-link">
+        <a class="links" href="#">Completed Orders</a>
+      </div>
+      <div class="item-container-link">
+        <a class="links" href="#">Settings</a>
+      </div>
     </div>
     <div id="navbar">
       <ul>
@@ -267,58 +406,60 @@ input:focus ~ .highlight {
         <li> <a class="logout" href="/donorSummary">View your orders</a></li>
       </ul>
     </div>
-      <div class="title">
-        <h1>Donation Edit</h1>
-      </div>
-      <div class="form-container">
-        <a style=" color:red;float:right;"class="btn-delete"href="/delete/<%=order.id%>">Delete Order</a>
-        <form class="form-inner-container">
+  <div class="title">
+    <h1>Donation Edit</h1>
+  </div>
+  <div class="form-container">
+    <a style=" color:red;float:right;" class="btn-delete" href="/delete/<%=order.id%>">Delete Order</a>
+    <form class="form-inner-container">
 
-          <br>
-            <div class="group">
-              <input type="text" name="description" required>
-              <span class="highlight"></span>
-              <span class="bar"></span>
-              <label>Food Description</label>
-            </div>
-
-            <div class="group">
-              <input type="text" name="size"  required>
-              <span class="highlight"></span>
-              <span class="bar"></span>
-              <label>Approximate weight</label>
-            </div>
-
-            <div class="group">
-              <input style="color:#999;"type="date" name="date"  required>
-              <span class="highlight"></span>
-              <span class="bar"></span>
-
-            </div>
-
-            <div class="group">
-              <input type="text" name="deadline"  required>
-              <span class="highlight"></span>
-              <span class="bar"></span>
-              <label>Deadline</label>
-            </div>
-
-            <div class="group">
-              <input type="text" name="tax_value"  required>
-              <span class="highlight"></span>
-              <span class="bar"></span>
-              <label>Tax value</label>
-            </div>
-
-            <div class="group">
-              <input type="text" name="address"  required>
-              <span class="highlight"></span>
-              <span class="bar"></span>
-              <label>Address</label>
-            </div>
-      <a class="btn"href="/edit/<%=order.id%>">Update Order</a>
-          </form>
+      <br>
+      <div class="group">
+        <input type="text" name="description" required>
+        <span class="highlight"></span>
+        <span class="bar"></span>
+        <label>Food Description</label>
       </div>
 
-  </body>
+      <div class="group">
+        <input type="text" name="size" required>
+        <span class="highlight"></span>
+        <span class="bar"></span>
+        <label>Approximate weight</label>
+      </div>
+
+      <div class="group">
+        <input style="color:#999;" type="date" name="date" required>
+        <span class="highlight"></span>
+        <span class="bar"></span>
+
+      </div>
+
+      <div class="group">
+        <input type="text" name="deadline" required>
+        <span class="highlight"></span>
+        <span class="bar"></span>
+        <label>Deadline</label>
+>>>>>>> d2f912146a096d31f15c61ac38ae041c56c501ac
+      </div>
+
+      <div class="group">
+        <input type="text" name="tax_value" required>
+        <span class="highlight"></span>
+        <span class="bar"></span>
+        <label>Tax value</label>
+      </div>
+
+      <div class="group">
+        <input type="text" name="address" required>
+        <span class="highlight"></span>
+        <span class="bar"></span>
+        <label>Address</label>
+      </div>
+      <a class="btn" href="/edit/<%=order.id%>">Update Order</a>
+    </form>
+  </div>
+
+</body>
+
 </html>

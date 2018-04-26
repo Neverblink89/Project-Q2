@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html>
-  <head>
 
-    <meta charset="utf-8">
-    <title>Charity View Order</title>
-    <style media="screen">
-    #navbar{
+<head>
+
+  <meta charset="utf-8">
+  <title>Charity View Order</title>
+  <style media="screen">
+    #navbar {
       border: 1px solid grey;
     }
+
     #navbar ul {
       margin: 0;
       padding: 5px;
@@ -44,29 +46,32 @@
     .logo-div {
       z-index: 2;
       position: absolute;
-      width: 15%;
-      height: 22%;
-      margin-left: 38em;
-      margin-top: 5em;
+      width: 18%;
+      height: 25%;
+      margin-left: 37em;
     }
-    .logo{
+
+    .logo {
       z-index: 2;
       width: 100%;
-      height:100%;
+      height: 100%;
     }
-    .form-container{
-    height: 30em;
-    width: 100%;
-    display: inline-block;
-    text-align: center;
+
+    .form-container {
+      height: 30em;
+      width: 100%;
+      display: inline-block;
+      text-align: center;
     }
-    .container{
+
+    .container {
       width: 70%;
       height: 30em;
       padding: 10px;
-      margin:auto;
+      margin: auto;
       margin-top: 3em;
     }
+
     .button {
       background-color: #176ac4;
       color: white;
@@ -81,60 +86,127 @@
       text-align: center;
       margin-top: 1em;
     }
-    .button-container{
+
+    .button-container {
       width: 40%;
-      margin:auto;
+      margin: auto;
       border: 1px solid black;
       height: 2em;
       text-align: center;
     }
-    .confirm{
+
+    .confirm {
       text-decoration: none;
       color: white;
     }
-    .title{
+
+    .title {
       text-align: center;
       margin: auto;
     }
+
     textarea#styled {
-	     width: 600px;
-	     height: 120px;
-	     border: 3px solid #cccccc;
-	     padding: 5px;
-	     font-family: Tahoma, sans-serif;
-	     background-position: bottom right;
-	      background-repeat: no-repeat;
-      }
-    body{
+      width: 600px;
+      height: 120px;
+      border: 3px solid #cccccc;
+      padding: 5px;
+      font-family: Tahoma, sans-serif;
+      background-position: bottom right;
+      background-repeat: no-repeat;
+    }
+
+    body {
       background: #F7F7F7;
       font-family: Tahoma, sans-serif;
       margin: 0;
     }
+
     .list {
       height: 15em;
       width: 50%;
       display: flex;
       flex-direction: row;
       margin: 0 auto;
-      margin-top: 10px;
       -moz-box-shadow: 0 0 4px #ccc;
       -webkit-box-shadow: 0 0 4px #ccc;
       box-shadow: 0 0 4px #ccc;
-      margin-top: 12em;
+      margin-top: 2em;
       background-color: white;
     }
+
     .box {
       height: 100%;
       width: 43%;
       display: inline-block;
       margin: 0 auto;
     }
-    #confirm{
+
+    #confirm {
       margin: 0 auto;
       line-height: 2em;
     }
-    a{
+
+    a {
       text-decoration: none;
+    }
+    .donor-title {
+      height: 7em;
+      -moz-box-shadow: 0 0 4px #ccc;
+      -webkit-box-shadow: 0 0 4px #ccc;
+      box-shadow: 0 0 4px #ccc;
+      background: #F6F6F6;
+      position: relative;
+      font-family: Arial, Verdana, Sans-Serif;
+      color: #333;
+    }
+
+    .dashboard {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      height: 70%;
+      width: 90%;
+
+    }
+
+    .item-container {
+      float: left;
+      height: 65px;
+      width: 130px;
+      font-size: 22px;
+      font-weight: 700;
+      margin-top: 10px;
+    }
+
+    .item-container-link {
+      float: left;
+      height: 65px;
+      width: 180px;
+      font-size: 22px;
+      font-weight: 700;
+      margin-top: 10px;
+      margin-left: 1em;
+    }
+
+    .links {
+      text-decoration: none;
+      color: #ECC22B;
+      float: left;
+      margin-left: 1em;
+      font-size: 18px;
+      margin-top: 15px;
+      font-weight: 600;
+    }
+
+    .links:hover {
+      color: #333;
+    }
+
+    .order-title {
+      height: 3em;
+      color: #176ac4;
+      text-align: center;
     }
     </style>
   </head>
@@ -154,45 +226,66 @@
       </ul>
     </div>
 
-
-    <div class="list">
-            <div class="box">
-
-              <div class="images">
-              <h4>Order ID:  <%=order.id%></h4>
-              <h4>Description:  <%=order.description%></h4>
-              <h4>Size:  <%=order.size%></h4>
-
-            </div>
-            </div>
-            <div class="box">
-              <h4 style="text-align:right;">Date: <%=(order.date + "").slice(0,15)%> </h4>
-              <h4 style="text-align:right;">Deadline:  <%=order.deadline%></h4>
-              <h4 style="text-align:right;">Address:  <%=order.address%></h4>
-                <br>
-            <div class="description">
-
-                <a style="float:right" class="button" id="confirm" type="submit" href="/update/<%=order.id%>">Confirm</a>
-
-            </div>
-          </div>
+  <div class="donor-title">
+    <div class="dashboard">
+      <div class="item-container">
+        Serrano's Dashboard
       </div>
-
-<div class="container">
-
-      <div class="form-container">
-          <form action="/note/<%=order.id%>" id="usrform" method="post">
-            <div class="title">
-            <h2>Communication Form</h2>
-            <p>Add a descriptive note for the donor</p>
-              </div>
-            <textarea id="styled"rows="14" cols="100" name="comment" placeholder="Enter a new note"></textarea>
-            <br>
-            <button class="button"type="submit">Submit</button>
-
-          </form>
-          </div>
-
+      <div class="item-container-link">
+        <a class="links" href="#">Confirmed orders</a>
+      </div>
+      <div class="item-container-link">
+        <a class="links" href="#">Settings</a>
+      </div>
     </div>
-  </body>
+  </div>
+
+  <div class="title">
+    <h2>Donation Summary</h2>
+    <p>details of the pickup</p>
+  </div>
+
+  <div class="list">
+    <div class="box">
+      <div class="images">
+        <br>
+        <br>
+        <span><b>Donation ID:</b> <%=order.id%></span>
+        <br>
+        <br>
+        <br>
+        <span><b>Description:</b> <%=order.description%></span>
+        <br>
+        <br>
+        <br>
+        <span><b>Size:</b> <%=order.size%></span>
+
+      </div>
+    </div>
+    <div class="box">
+      <h4 style="text-align:right;"><%=(order.date + "").slice(0,15)%> </h4>
+      <h4 style="text-align:right;">Pickup:  <%=order.deadline%></h4>
+      <h4 style="text-align:right;">Address:  <%=order.address%></h4>
+      <br>
+      <div class="description">
+        <a style="float:right" class="button" id="confirm" type="submit" href="/update/<%=order.id%>">Confirm</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="form-container">
+      <form action="/note/<%=order.id%>" id="usrform" method="post">
+        <div class="title">
+          <h2>Communication Form</h2>
+          <p>Add a descriptive note for the donor</p>
+        </div>
+        <textarea id="styled" rows="14" cols="100" name="comment" placeholder="Enter a new note"></textarea>
+        <br>
+        <button class="button" type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+</body>
+
 </html>

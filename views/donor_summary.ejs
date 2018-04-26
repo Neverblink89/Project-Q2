@@ -2,7 +2,7 @@
 <html>
 <style>
   html,
-  body{
+  body {
     background: white;
     font-family: Tahoma, sans-serif;
     margin: 0;
@@ -54,10 +54,11 @@
     height: 25%;
     margin-left: 38em;
   }
-  .logo{
+
+  .logo {
     z-index: 2;
     width: 100%;
-    height:100%;
+    height: 100%;
   }
 
   .button {
@@ -81,10 +82,11 @@
   .box {
     height: 100%;
     width: 43%;
-    display:block;
+    display: block;
     margin: 0 auto;
 
   }
+
   .list {
     background: white;
     height: 10em;
@@ -97,53 +99,59 @@
     box-shadow: 0 0 4px #ccc;
     margin-top: 3em;
   }
-  .images{
+
+  .images {
     margin-top: 1em;
     height: 80%;
     width: 80%;
   }
-  .name{
 
-  }
-  .donor-title{
+  .name {}
+
+  .donor-title {
     height: 7em;
     -moz-box-shadow: 0 0 4px #ccc;
     -webkit-box-shadow: 0 0 4px #ccc;
     box-shadow: 0 0 4px #ccc;
     background: #F6F6F6;
     position: relative;
-    font-family: Arial,Verdana,Sans-Serif;
+    font-family: Arial, Verdana, Sans-Serif;
     color: #333;
 
 
 
   }
-  .dashboard{
+
+  .dashboard {
     position: absolute;
-   top: 50%; left: 50%;
-   transform: translate(-50%,-50%);
-   height: 70%;
-   width: 90%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 70%;
+    width: 90%;
 
   }
-  .item-container{
+
+  .item-container {
     float: left;
     height: 65px;
     width: 130px;
-    font-size:22px;
+    font-size: 22px;
     font-weight: 700;
     margin-top: 10px;
   }
-  .item-container-link{
+
+  .item-container-link {
     float: left;
     height: 65px;
     width: 180px;
-    font-size:22px;
+    font-size: 22px;
     font-weight: 700;
     margin-top: 10px;
     margin-left: 1em;
   }
-.links{
+
+  .links {
     text-decoration: none;
     color: #ECC22B;
     float: left;
@@ -152,23 +160,26 @@
     margin-top: 15px;
     font-weight: 600;
   }
-  .links:hover{
+
+  .links:hover {
     color: #333;
   }
-  .order-title{
+
+  .order-title {
     height: 3em;
     color: #176ac4;
     text-align: center;
   }
-
 </style>
+
 <head>
   <meta charset="utf-8">
   <title></title>
 </head>
+
 <body>
   <div class="logo-div">
-  <img class="logo" src="/images/food.png" alt="">
+    <img class="logo" src="/images/food.png" alt="">
   </div>
   <div id="navbar">
     <ul>
@@ -185,41 +196,43 @@
         Serrano's Dashboard
       </div>
       <div class="item-container-link">
-        <a class="links"href="#">Completed Orders</a>
+        <a class="links" href="#">Completed Orders</a>
       </div>
       <div class="item-container-link">
-        <a class="links"href="#">Settings</a>
+        <a class="links" href="#">Settings</a>
       </div>
     </div>
   </div>
   <div class="order-title">
     <h1>Current Orders</h1>
   </div>
-    <% for(let i=0;i<orders.length;i++){  %>
-      <div id="confirmed" class="list">
-          <div class="box">
-            <div class="images">
-            <p><b>Order number: </b><%=orders[i].id%></p>
-            <p><b>Date:</b> <%=(orders[i].date + "").slice(0,15)%></p>
-            <p><b>Description:</b> <%=orders[i].description%></p>
-            <p><b>Status:</b> <%=orders[i].confirmation%></p>
-          </div>
-          </div>
-          <div class="box">
-            <a class="button" type="submit" href="/updates/<%=orders[i].id%>">Mark Completed</a>
-              <br>
-              <a class="button" type="submit" href="/donorViewOrder/<%=orders[i].id%>">Edit Donation</a>
-
-
-          </div>
-
+  <% for(let i=0;i<orders.length;i++){  %>
+    <div id="confirmed" class="list">
+      <div class="box">
+        <div class="images">
+          <p><b>Order number: </b>
+            <%=orders[i].id%>
+          </p>
+          <p><b>Date:</b>
+            <%=(orders[i].date + "").slice(0,15)%>
+          </p>
+          <p><b>Description:</b>
+            <%=orders[i].description%>
+          </p>
         </div>
-
+      </div>
+      <div class="box">
+        <a class="button" type="submit" href="/updates/<%=orders[i].id%>">Mark Completed</a>
+        <br>
+        <br>
+        <br>
+        <br>
+        <a class="button" type="submit" href="/donorViewOrder/<%=orders[i].id%>">Edit Donation</a>
+      </div>
     </div>
-
-  </div>
-  <% } %>
-
+    </div>
+    </div>
+    <% } %>
 </body>
 
 </html>

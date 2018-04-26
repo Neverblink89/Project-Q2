@@ -81,6 +81,62 @@
       width: 100%;
       height:100%;
     }
+    .donor-title {
+      height: 7em;
+      -moz-box-shadow: 0 0 4px #ccc;
+      -webkit-box-shadow: 0 0 4px #ccc;
+      box-shadow: 0 0 4px #ccc;
+      background: #F6F6F6;
+      position: relative;
+      font-family: Arial, Verdana, Sans-Serif;
+      color: #333;
+
+
+
+    }
+
+    .dashboard {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      height: 70%;
+      width: 90%;
+
+    }
+
+    .item-container {
+      float: left;
+      height: 65px;
+      width: 130px;
+      font-size: 22px;
+      font-weight: 700;
+      margin-top: 10px;
+    }
+
+    .item-container-link {
+      float: left;
+      height: 65px;
+      width: 180px;
+      font-size: 22px;
+      font-weight: 700;
+      margin-top: 10px;
+      margin-left: 1em;
+    }
+
+    .links {
+      text-decoration: none;
+      color: #ECC22B;
+      float: left;
+      margin-left: 1em;
+      font-size: 18px;
+      margin-top: 15px;
+      font-weight: 600;
+    }
+
+    .links:hover {
+      color: #333;
+    }
 
 </style>
 <head>
@@ -101,9 +157,22 @@
       <li><a class="logout" href="/logout">Logout</a></li>
     </ul>
   </div>
+  <div class="donor-title">
+    <div class="dashboard">
+      <div class="item-container">
+        Serrano's Dashboard
+      </div>
+      <div class="item-container-link">
+        <a class="links" href="/charitySummary">Your Donation Pickups</a>
+      </div>
+      <div class="item-container-link">
+        <a class="links" href="#">Settings</a>
+      </div>
+    </div>
+  </div>
   <div class="container">
     <form class="" action="/newOrder/<%=user.id%>" method="post">
-      <h3>Create a food pick up</h3>
+      <h1>Create a food pick up</h1>
       <input type="text" name="description" placeholder="Food description">
       <input type="hidden"name="confirmation" value="unconfirmed">
       <input type="text" name="size" placeholder="approximate weight">

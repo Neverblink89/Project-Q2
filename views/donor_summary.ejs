@@ -52,7 +52,7 @@
     position: absolute;
     width: 17%;
     height: 21%;
-    margin-left: 36em;
+    margin-left: 38em;
   }
   .logo{
     z-index: 2;
@@ -73,7 +73,9 @@
     box-shadow: 0 0 3px #ccc;
     text-align: center;
     float: right;
-    margin-top: 1em;
+    margin-top: 22px;
+    line-height: 2.5em;
+    text-decoration: none;
   }
 
   .box {
@@ -90,11 +92,10 @@
     display: flex;
     flex-direction: row;
     margin: 0 auto;
-    margin-top: 10px;
     -moz-box-shadow: 0 0 4px #ccc;
     -webkit-box-shadow: 0 0 4px #ccc;
     box-shadow: 0 0 4px #ccc;
-    margin-top: 12em;
+    margin-top: 3em;
   }
   .images{
     margin-top: 1em;
@@ -154,6 +155,11 @@
   .links:hover{
     color: #333;
   }
+  .order-title{
+    height: 3em;
+    color: #176ac4;
+    text-align: center;
+  }
 </style>
 <head>
   <meta charset="utf-8">
@@ -183,25 +189,18 @@
       <div class="item-container-link">
         <a class="links"href="#">Settings</a>
       </div>
-
     </div>
-
   </div>
-  <div id="confirmed" class="list">
+  <div class="order-title">
+    <h1>Current Orders</h1>
+  </div>
     <% for(let i=0;i<orders.length;i++){  %>
-      <div class="list">
-
+      <div id="confirmed" class="list">
           <div class="box">
-
             <div class="images">
-
-            <b>Order number: <%=orders[i].id%></b>
-            <br>
-            <br>
-            <b>Date: <%=(orders[i].date + "").slice(0,15)%></b>
-            <br>
-            <p style="margin-top:2em;"><b>Description: <%=orders[i].description%></b></p>
-
+            <p><b>Order number: </b><%=orders[i].id%></p>
+            <p><b>Date:</b> <%=(orders[i].date + "").slice(0,15)%></p>
+            <p><b>Description:</b> <%=orders[i].description%></p>
           </div>
           </div>
           <div class="box">
@@ -210,8 +209,7 @@
               <br>
               <br>
               <br>
-              <br>
-              <button class="button" type="submit" href="/viewOrder/">Edit Donation</button>
+              <a class="button" type="submit" href="/viewOrder/">Edit Donation</a>
 
           </div>
 

@@ -75,6 +75,7 @@ a {
       margin-left: 5em;
       color: white;
       width: 50%;
+      line-height: 20px;
 
     }
     .container input {
@@ -324,11 +325,13 @@ a {
       </div>
     </div>
   </div>
-  <div action="/newOrder/<%=user.id%>"class="form-container">
+  <div class="form-container">
     <h1 style="color:#333;text-align:center;">Create a food pick up</h1>
-    <form class="form-inner-container">
+    <form action="/newOrder/<%=user.id%>"method="post"class="form-inner-container">
       <br>
+
       <div class="group">
+        <form>
         <input type="text" name="description" required>
         <input type="hidden"name="confirmation" value="unconfirmed">
         <span class="highlight"></span>
@@ -336,6 +339,7 @@ a {
         <label>Food Description</label>
       </div>
       <div class="group">
+
         <input type="text" name="size" required>
         <span class="highlight"></span>
         <span class="bar"></span>
@@ -364,7 +368,7 @@ a {
         <span class="bar"></span>
         <label>Address</label>
       </div>
-      <a class="btn" href="">Create New Order</a>
+      <button class="btn"type="submit" name="button">Create order</button>
     </form>
   </div>
   <!-- <div class="container">

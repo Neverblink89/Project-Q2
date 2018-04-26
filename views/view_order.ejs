@@ -65,7 +65,7 @@
       height: 30em;
       padding: 10px;
       margin:auto;
-      margin-top: 10em;
+      margin-top: 3em;
     }
     .button {
       background-color: #176ac4;
@@ -82,10 +82,10 @@
       margin-top: 1em;
     }
     .button-container{
-      width: 20%;
+      width: 40%;
       margin:auto;
       border: 1px solid black;
-      height: 20em;
+      height: 2em;
       text-align: center;
     }
     .confirm{
@@ -97,19 +97,45 @@
       margin: auto;
     }
     textarea#styled {
-	width: 600px;
-	height: 120px;
-	border: 3px solid #cccccc;
-	padding: 5px;
-	font-family: Tahoma, sans-serif;
-	background-position: bottom right;
-	background-repeat: no-repeat;
-}
-body{
-  background: #F7F7F7;
-  font-family: Tahoma, sans-serif;
-  margin: 0;
-}
+	     width: 600px;
+	     height: 120px;
+	     border: 3px solid #cccccc;
+	     padding: 5px;
+	     font-family: Tahoma, sans-serif;
+	     background-position: bottom right;
+	      background-repeat: no-repeat;
+      }
+    body{
+      background: #F7F7F7;
+      font-family: Tahoma, sans-serif;
+      margin: 0;
+    }
+    .list {
+      height: 15em;
+      width: 50%;
+      display: flex;
+      flex-direction: row;
+      margin: 0 auto;
+      margin-top: 10px;
+      -moz-box-shadow: 0 0 4px #ccc;
+      -webkit-box-shadow: 0 0 4px #ccc;
+      box-shadow: 0 0 4px #ccc;
+      margin-top: 12em;
+      background-color: white;
+    }
+    .box {
+      height: 100%;
+      width: 43%;
+      display: inline-block;
+      margin: 0 auto;
+    }
+    #confirm{
+      margin: 0 auto;
+      line-height: 2em;
+    }
+    a{
+      text-decoration: none;
+    }
     </style>
   </head>
   <body>
@@ -121,14 +147,40 @@ body{
         <li class=""><a href="#">Our mission</a></li>
         <li><a href="/">Home</a></li>
         <li><a href="#">About</a></li>
-        <li> <a class="logout" href="/donorSummary">View your orders</a></li>
         <li><a class="logout" href="/logout">Logout</a></li>
+        <li> <a class="logout" href="/charitySummary">View your orders</a></li>
+
       </ul>
     </div>
+
+
+    <div class="list">
+            <div class="box">
+
+              <div class="images">
+              <h4>Order ID:  <%=order.id%></h4>
+              <h4>Description:  <%=order.description%></h4>
+              <h4>Size:  <%=order.size%></h4>
+
+            </div>
+            </div>
+            <div class="box">
+              <h4 style="text-align:right;">Date: <%=(order.date + "").slice(0,15)%> </h4>
+              <h4 style="text-align:right;">Deadline:  <%=order.deadline%></h4>
+              <h4 style="text-align:right;">Address:  <%=order.address%></h4>
+                <br>
+            <div class="description">
+
+                <a style="float:right" class="button" id="confirm" type="submit" href="/update/<%=order.id%>">Confirm</a>
+
+            </div>
+          </div>
+      </div>
+
 <div class="container">
 
       <div class="form-container">
-          <form action="/note/<%=note.id%>" id="usrform" method="post">
+          <form action="/note/<%=order.id%>" id="usrform" method="post">
             <div class="title">
             <h2>Communication Form</h2>
             <p>Add a descriptive note for the donor</p>
@@ -136,7 +188,7 @@ body{
             <textarea id="styled"rows="14" cols="100" name="comment" placeholder="Enter a new note"></textarea>
             <br>
             <button class="button"type="submit">Submit</button>
-            <button class="button"><a class="confirm"href="/update/<%=order.id%>">Confirm</a></button>
+
           </form>
           </div>
 

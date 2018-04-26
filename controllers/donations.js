@@ -57,6 +57,14 @@ edit: (req, res)=>{
   }).then(()=>{
     res.redirect('/donorSummary');
   })
+},
+charity_summary: (req, res)=>{
+  knex('user').where('id', req.session.user_id).then((results)=>{
+    let user = results[0];
+    knex('order').then((result)=>{
+      res.render('charitySummary', {user: user, orders: result});
+    })
+  })
 }
 
 

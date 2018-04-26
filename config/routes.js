@@ -38,6 +38,8 @@ module.exports = function(app){
 
   app.post('/edit/:id', donations.edit);
 
+  app.get('/charitySummary', donations.charity_summary);
+
   app.get('/logout', user.logout);
 
 }

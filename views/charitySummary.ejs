@@ -182,10 +182,10 @@
   <div class="donor-title">
     <div class="dashboard">
       <div class="item-container">
-        Serrano's Dashboard
+          <%= user.name %> Dashboard!
       </div>
       <div class="item-container-link">
-        <a class="links"href="#">Completed Orders</a>
+        
       </div>
       <div class="item-container-link">
         <a class="links"href="#">Settings</a>
@@ -206,8 +206,8 @@
           </div>
           </div>
           <div class="box">
-            
-              <a class="button" type="submit" href="/donorViewOrder/<%=orders[i].id%>">View Donation</a>
+
+              <a class="button" type="submit" href="/viewOrder/<%=orders[i].id%>">View Donation</a>
 
 
           </div>

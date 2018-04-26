@@ -172,7 +172,7 @@
   <div class="donor-title">
     <div class="dashboard">
       <div class="item-container">
-        Serrano's Dashboard
+        <%= user.name %> Dashboard!
       </div>
       <div class="item-container-link">
         <a class="links" href="/charitySummary">Your Donation Pickups</a>
@@ -194,7 +194,7 @@
           </div>
         </div>
         <div class="box">
-          <h2 style="text-align:right;"><%=(donations[i].date + "").slice(0,15)%> </h2>
+          <h4 style="text-align:right;"><%=(donations[i].date + "").slice(0,15)%> </h4>
           <br>
           <div class="description">
             <div class="button-container">

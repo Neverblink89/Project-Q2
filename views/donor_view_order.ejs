@@ -1,4 +1,4 @@
-o
+
 <!DOCTYPE html>
 <html>
 <style media="screen">
@@ -84,8 +84,8 @@ body{
       -webkit-box-shadow: 0 0 3px #ccc;
       box-shadow: 0 0 3px #ccc;
       text-align: center;
-      float: right;
-      margin-top: 1em;
+      padding: 10px;
+      margin-top: 2em;
       text-decoration: none;
       line-height: 2em;
     }
@@ -97,6 +97,157 @@ body{
     .container{
     margin-top: 10em;
     }
+    .form-container{
+      font-family:'Roboto';
+       width:600px;
+       margin:0px auto 0;
+       display:block;
+       background:#FFF;
+       padding:10px 50px 50px;
+       bmoz-box-shadow: 0 0 3px #ccc;
+       -webkit-box-shadow: 0 0 3px #ccc;
+       box-shadow: 0 0 3px #ccc;
+    }
+    .form-inner-container{
+      margin-top: 2em;
+      width:50%;
+      margin-left:25%;
+    }
+    .form-inner-container input {
+      font-size:18px;
+      padding:10px 10px 10px 5px;
+      width:300px;
+      border:none;
+      border-bottom:1px solid #757575;
+      background: white;
+
+    }
+    .btn-delete{
+      margin-top: 1em;
+      font-size: 16px;
+    }
+    .btn {
+      background-color: #176ac4;
+      color: white;
+      height: 2.5em;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      bmoz-box-shadow: 0 0 3px #ccc;
+      -webkit-box-shadow: 0 0 3px #ccc;
+      box-shadow: 0 0 3px #ccc;
+      text-align: center;
+      padding: 10px;
+      margin: auto;
+      margin-top: 22px;
+      line-height: 2.5em;
+      text-decoration: none;
+      width: 100px;
+      margin-left: 80px;
+
+        }
+        a{
+          text-decoration: none;
+        }
+
+        .group            {
+        position:relative;
+        margin-bottom:45px;
+}
+input               {
+  font-size:18px;
+  padding:10px 10px 10px 5px;
+  display:block;
+  width:300px;
+  border:none;
+  border-bottom:1px solid #757575;
+}
+input:focus         { outline:none; }
+
+/* LABEL ======================================= */
+label                {
+  color:#999;
+  font-size:18px;
+  font-weight:normal;
+  position:absolute;
+  pointer-events:none;
+  left:5px;
+  top:10px;
+  transition:0.2s ease all;
+  -moz-transition:0.2s ease all;
+  -webkit-transition:0.2s ease all;
+}
+
+/* active state */
+input:focus ~ label, input:valid ~ label        {
+  top:-20px;
+  font-size:14px;
+  color:#5264AE;
+}
+
+/* BOTTOM BARS ================================= */
+.bar    { position:relative; display:block; width:300px; }
+.bar:before, .bar:after     {
+  content:'';
+  height:2px;
+  width:0;
+  bottom:1px;
+  position:absolute;
+  background:#5264AE;
+  transition:0.2s ease all;
+  -moz-transition:0.2s ease all;
+  -webkit-transition:0.2s ease all;
+}
+.bar:before {
+  left:50%;
+}
+.bar:after {
+  right:50%;
+}
+
+/* active state */
+input:focus ~ .bar:before, input:focus ~ .bar:after {
+  width:50%;
+}
+
+/* HIGHLIGHTER ================================== */
+.highlight {
+  position:absolute;
+  height:60%;
+  width:100px;
+  top:25%;
+  left:0;
+  pointer-events:none;
+  opacity:0.5;
+}
+
+/* active state */
+input:focus ~ .highlight {
+  -webkit-animation:inputHighlighter 0.3s ease;
+  -moz-animation:inputHighlighter 0.3s ease;
+  animation:inputHighlighter 0.3s ease;
+}
+
+/* ANIMATIONS ================ */
+@-webkit-keyframes inputHighlighter {
+    from { background:#5264AE; }
+  to    { width:0; background:transparent; }
+}
+@-moz-keyframes inputHighlighter {
+    from { background:#5264AE; }
+  to    { width:0; background:transparent; }
+}
+@keyframes inputHighlighter {
+    from { background:#5264AE; }
+  to    { width:0; background:transparent; }
+}
+.title{
+  height: 5em;
+  text-align: center;
+  margin-top: 7em;
+  color: #333;
+
+}
 </style>
   <head>
     <meta charset="utf-8">
@@ -108,31 +259,65 @@ body{
     </div>
     <div id="navbar">
       <ul>
-
         <li class="left"><a href="#">Our mission</a></li>
         <li class="left"><a href="#">Solutions</a></li>
         <li class="left"><a href="#">How we can help</a></li>
-        <li><a href="#">Support</a></li>
-        <li><a href="#">About</a></li>
-        <li><a onclick="document.getElementById('modal-wrapper1').style.display='block'" class="login" href="#">Register</a></li>
-        <li><a class="login" onclick="document.getElementById('modal-wrapper').style.display='block'" href="#">Login</a></li>
+        <li><a href="/">Home</a></li>
         <li><a href="/logout">Logout</a></li>
       </ul>
     </div>
+      <div class="title">
+        <h1>Donation Edit</h1>
+      </div>
+      <div class="form-container">
+        <a style=" color:red;float:right;"class="btn-delete"href="/delete/<%=order.id%>">Delete Order</a>
+        <form class="form-inner-container">
 
-    <h2>Test button to delete an order</h2>
-    <button><a href="/delete/<%=order.id%>">Delete Order</a></button>
+          <br>
+            <div class="group">
+              <input type="text" name="description" required>
+              <span class="highlight"></span>
+              <span class="bar"></span>
+              <label>Food Description</label>
+            </div>
 
-    <h2>Test button to mark an order as complete</h2>
-    <button><a href="/updates/<%=order.id%>">Mark as Complete</a></button>
+            <div class="group">
+              <input type="text" name="size"  required>
+              <span class="highlight"></span>
+              <span class="bar"></span>
+              <label>Approximate weight</label>
+            </div>
 
-    <h2>Test button to update anything on an order</h2>
-    <button><a href="/edit/<%=order.id%>">Update Order</a></button>
+            <div class="group">
+              <input style="color:#999;"type="date" name="date"  required>
+              <span class="highlight"></span>
+              <span class="bar"></span>
 
-    
+            </div>
 
+            <div class="group">
+              <input type="text" name="deadline"  required>
+              <span class="highlight"></span>
+              <span class="bar"></span>
+              <label>Deadline</label>
+            </div>
 
+            <div class="group">
+              <input type="text" name="tax_value"  required>
+              <span class="highlight"></span>
+              <span class="bar"></span>
+              <label>Tax value</label>
+            </div>
 
+            <div class="group">
+              <input type="text" name="address"  required>
+              <span class="highlight"></span>
+              <span class="bar"></span>
+              <label>Address</label>
+            </div>
+      <a class="btn"href="/edit/<%=order.id%>">Update Order</a>
+          </form>
+      </div>
 
   </body>
 </html>

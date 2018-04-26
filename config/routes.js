@@ -40,7 +40,10 @@ module.exports = function(app){
 
   app.get('/charitySummary', donations.charity_summary);
 
+  app.get('/completedOrders', donations.completed_orders);
+
   app.get('/logout', user.logout);
+
 
 }
 function authenticateUser(req, res, next){

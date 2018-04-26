@@ -95,8 +95,9 @@ module.exports = {
           .select("user.*", "order.*")
           .where("confirmation", "unconfirmed")
           .then((data)=>{
-            res.render('donations', {donations:data})
-
+            knex('user').where('id', req.session.user_id).then((result)=>{
+              res.render('donations', {donations:data, user:result[0]});
+            })
           })
     },
     logout: (req, res) => {

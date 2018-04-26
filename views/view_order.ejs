@@ -220,7 +220,7 @@
         <li><a href="/">Home</a></li>
         <li><a href="#">About</a></li>
         <li><a class="logout" href="/logout">Logout</a></li>
-        <li> <a class="logout" href="/charitySummary">View Your Orders</a></li>
+        <li> <a class="logout" href="/charitySummary">View Your Donations</a></li>
         <li> <a class="logout" href="/donations">Available Donations</a></li>
 
       </ul>
@@ -229,10 +229,10 @@
   <div class="donor-title">
     <div class="dashboard">
       <div class="item-container">
-        Serrano's Dashboard
+        <%= user.name %> Dashboard!
       </div>
       <div class="item-container-link">
-        <a class="links" href="#">Confirmed orders</a>
+        <a class="links" href="/charitySummary">Confirmed Donations</a>
       </div>
       <div class="item-container-link">
         <a class="links" href="#">Settings</a>
@@ -242,7 +242,7 @@
 
   <div class="title">
     <h2>Donation Summary</h2>
-    <p>details of the pickup</p>
+    <p>Details of the pickup</p>
   </div>
 
   <div class="list">

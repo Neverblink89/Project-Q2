@@ -5,7 +5,9 @@ module.exports = {
 view_order: (req, res)=>{
   knex('order').where('id', req.params.id).then((result)=>{
     knex('note').where('id', req.params.id).then((results)=>{
-      res.render('view_order', {order: result[0], note: results});
+      knex('user').where('id', req.session.user_id).then((user)=>{
+        res.render('view_order', {order: result[0], note: results, user:user[0]});
+      })
     })
   })
 },
@@ -29,8 +31,10 @@ note: (req, res)=>{
 donor_view_order: (req, res)=>{
   knex('order').where('id', req.params.id).then((result)=>{
     knex('note').where('id', req.params.id).then((results)=>{
-      res.render('donor_view_order', {order: result[0], note: results[0]});
+      knex('user').where('id', req.session.user_id).then((user)=>{
+      res.render('donor_view_order', {order: result[0], note: results[0], user:user[0]});
     })
+  })
   })
 },
 delete: (req, res)=>{
@@ -60,12 +64,25 @@ edit: (req, res)=>{
 },
 charity_summary: (req, res)=>{
   knex('user').where('id', req.session.user_id).then((results)=>{
-    let user = results[0];
+
     knex('order').where("user_id", req.session.user_id).then((result)=>{
-      res.render('charitySummary', {user: user, orders: result});
+      res.render('charitySummary', {user: results[0], orders: result});
     })
   })
-}
+},
+completed_orders: (req, res)=>{
+  knex('order')
+    .join("user", "order.user_id", "user.id")
+    .select("user.*", "order.*")
+    .where("confirmation", "completed")
+    .then((data)=>{
+      knex('user').where('id', req.session.user_id).then((result)=>{
+        res.render('donations', {donations:data, user:result[0]});
+      })
+    })
+},
+
+
 
 
 

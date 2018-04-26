@@ -5,14 +5,12 @@
   body {
     height: 100%;
   }
-
   body {
     background: #F6F6F6;
     font-family: Tahoma, sans-serif;
     margin: 0;
     color: #333;
   }
-
   #navbar ul {
     margin: 0;
     padding: 5px;
@@ -22,36 +20,29 @@
     height: 4em;
     line-height: 4em;
   }
-
   #navbar ul li {
     display: inline;
   }
-
   #navbar ul li a {
     text-decoration: none;
     padding: .2em 1em;
     margin-left: 2em;
     color: #fff;
     z-index: 2;
-
   }
-
   #navbar ul li a:hover {
     color: #000;
     background: rgba(255, 255, 255, 0.5);
     height: 100%;
   }
-
   .logout {
     margin-left: 58em;
     float: right;
   }
-
   .row {
     width: auto;
     border: 1px solid blue;
   }
-
   .logo-div {
     z-index: 2;
     position: absolute;
@@ -59,13 +50,11 @@
     height: 26%;
     margin-left: 36em;
   }
-
   .logo {
     z-index: 2;
     width: 100%;
     height: 100%;
   }
-
   .button {
     background-color: #176ac4;
     color: white;
@@ -83,36 +72,33 @@
     text-decoration: none;
     line-height: 2em;
   }
-
   .box {
     height: 100%;
     width: 43%;
     display: inline-block;
     margin: 0 auto;
   }
-
   .container {
     margin-top: 2em;
   }
-
   .list {
     height: 10em;
     width: 50%;
     display: flex;
     flex-direction: row;
     margin: 0 auto;
-    margin-top: 12px;
+    margin-top: 10px;
     -moz-box-shadow: 0 0 4px #ccc;
     -webkit-box-shadow: 0 0 4px #ccc;
     box-shadow: 0 0 4px #ccc;
     background: white;
   }
-
   .images {
     margin-top: 1em;
     height: 80%;
     width: 80%;
   }
+  .name {}
   .donor-title {
     height: 7em;
     -moz-box-shadow: 0 0 4px #ccc;
@@ -122,11 +108,7 @@
     position: relative;
     font-family: Arial, Verdana, Sans-Serif;
     color: #333;
-
-
-
   }
-
   .dashboard {
     position: absolute;
     top: 50%;
@@ -134,9 +116,7 @@
     transform: translate(-50%, -50%);
     height: 70%;
     width: 90%;
-
   }
-
   .item-container {
     float: left;
     height: 65px;
@@ -145,7 +125,6 @@
     font-weight: 700;
     margin-top: 10px;
   }
-
   .item-container-link {
     float: left;
     height: 65px;
@@ -155,7 +134,6 @@
     margin-top: 10px;
     margin-left: 1em;
   }
-
   .links {
     text-decoration: none;
     color: #ECC22B;
@@ -165,23 +143,19 @@
     margin-top: 15px;
     font-weight: 600;
   }
-
   .links:hover {
     color: #333;
   }
-
   .title {
     height: 3em;
     text-align: center;
     margin-top: 2em;
   }
 </style>
-
 <head>
   <meta charset="utf-8">
   <title></title>
 </head>
-
 <body>
   <div class="logo-div">
     <img class="logo" src="/images/food.png" alt="">
@@ -192,12 +166,9 @@
       <li><a href="#">Support</a></li>
       <li><a href="#">About</a></li>
       <li><a class="logout" href="/logout">Logout</a></li>
-      <li> <a class="logout" href="/charitySummary">View Your Orders</a></li>
+      <li> <a class="logout" href="/">Home</a></li>
     </ul>
   </div>
-<div class="container">
-
-<h2 class="title">Availble Donations</h2>
   <div class="donor-title">
     <div class="dashboard">
       <div class="item-container">
@@ -214,12 +185,10 @@
   <div class="title">
     <h1>Donations available for pickup</h1>
   </div>
-
   <div class="container">
     <% for(let i=0;i<donations.length;i++){  %>
       <div class="list">
         <div class="box">
-
           <div class="images">
             <img class="images" src="<%=donations[i].avatar_img%>" alt="">
           </div>
@@ -233,12 +202,9 @@
             </div>
           </div>
         </div>
-
       </div>
       <% } %>
   </div>
-
   </div>
 </body>
-
 </html>

@@ -53,6 +53,49 @@ body {
     float: left;
     color: white;
   }
+  .list {
+    height: 10em;
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+    margin-top: 10px;
+    -moz-box-shadow: 0 0 4px #ccc;
+    -webkit-box-shadow: 0 0 4px #ccc;
+    box-shadow: 0 0 4px #ccc;
+  }
+  .box {
+    height: 100%;
+    width: 43%;
+    display: inline-block;
+    margin: 0 auto;
+  }
+
+    .button {
+      background-color: #176ac4;
+      color: white;
+      height: 2em;
+      width: 6em;
+      border: none;
+      cursor: pointer;
+      font-size: 20px;
+      bmoz-box-shadow: 0 0 3px #ccc;
+      -webkit-box-shadow: 0 0 3px #ccc;
+      box-shadow: 0 0 3px #ccc;
+      text-align: center;
+      float: right;
+      margin-top: 1em;
+      text-decoration: none;
+      line-height: 2em;
+    }
+    .images{
+      margin-top: 1em;
+      height: 80%;
+      width: 80%;
+    }
+    .container{
+    margin-top: 10em;
+    }
 </style>
   <head>
     <meta charset="utf-8">
@@ -84,5 +127,11 @@ body {
 
     <h2>Test button to update anything on an order</h2>
     <button><a href="/edit/<%=order.id%>">Update Order</a></button>
+
+    
+
+
+
+
   </body>
 </html>

@@ -92,8 +92,11 @@ module.exports = {
       }//add this before any route that is only for charity access
         knex('order')
           .join("user", "order.user_id", "user.id")
+          .select("user.*", "order.*")
+          .where("confirmation", "unconfirmed")
           .then((data)=>{
             res.render('donations', {donations:data})
+
           })
     },
     logout: (req, res) => {

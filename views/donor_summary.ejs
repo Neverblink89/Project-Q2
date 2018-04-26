@@ -202,19 +202,14 @@
             <p><b>Order number: </b><%=orders[i].id%></p>
             <p><b>Date:</b> <%=(orders[i].date + "").slice(0,15)%></p>
             <p><b>Description:</b> <%=orders[i].description%></p>
+            <p><b>Status:</b> <%=orders[i].confirmation%></p>
           </div>
           </div>
           <div class="box">
             <a class="button" type="submit" href="/updates/<%=orders[i].id%>">Mark Completed</a>
               <br>
-              <br>
-              <br>
-              <br>
-<<<<<<< HEAD
               <a class="button" type="submit" href="/donorViewOrder/<%=orders[i].id%>">Edit Donation</a>
-=======
-              <a class="button" type="submit" href="/viewOrder/<%=orders[i].id%>">Edit Donation</a>
->>>>>>> c44ad8c40107277e11d38b4e3e496194a87e37d6
+
 
           </div>
 

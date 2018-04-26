@@ -61,7 +61,7 @@ edit: (req, res)=>{
 charity_summary: (req, res)=>{
   knex('user').where('id', req.session.user_id).then((results)=>{
     let user = results[0];
-    knex('order').then((result)=>{
+    knex('order').where("user_id", req.session.user_id).then((result)=>{
       res.render('charitySummary', {user: user, orders: result});
     })
   })

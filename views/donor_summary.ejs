@@ -196,7 +196,7 @@
             <%= user.name %> Dashboard!
       </div>
       <div class="item-container-link">
-        <a class="links" href="#">Completed Orders</a>
+        <a class="links" href="/completedOrders">Completed Donations</a>
       </div>
       <div class="item-container-link">
         <a class="links" href="#">Settings</a>
@@ -204,13 +204,13 @@
     </div>
   </div>
   <div class="order-title">
-    <h1>Current Orders</h1>
+    <h1>Current Donations</h1>
   </div>
   <% for(let i=0;i<orders.length;i++){  %>
     <div id="confirmed" class="list">
       <div class="box">
         <div class="images">
-          <p><b>Order number: </b>
+          <p><b>Order ID: </b>
             <%=orders[i].id%>
           </p>
           <p><b>Date:</b>

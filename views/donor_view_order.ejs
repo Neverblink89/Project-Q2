@@ -330,7 +330,7 @@
           <%= user.name %> Dashboard!
       </div>
       <div class="item-container-link">
-        <a class="links" href="#">Completed Orders</a>
+        <a class="links" href="/donorSummary">View Donations</a>
       </div>
       <div class="item-container-link">
         <a class="links" href="#">Settings</a>
@@ -341,7 +341,7 @@
     <h1>Donation Edit</h1>
   </div>
   <div class="form-container">
-    <a style=" color:red;float:right;" class="btn-delete" href="/delete/<%=order.id%>">Delete Order</a>
+    <a style=" color:red;float:right;" class="btn-delete" href="/delete/<%=order.id%>">Delete Donation</a>
     <form class="form-inner-container" action="/edit/<%=order.id%>" method="post">
       <br>
       <div class="group">
@@ -381,7 +381,7 @@
         <span class="bar"></span>
         <label>Address</label>
       </div>
-      <button class="btn" type="submit">Update Order</button>
+      <button class="btn" type="submit">Update Donation</button>
     </form>
   </div>
 </body>

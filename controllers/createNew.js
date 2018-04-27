@@ -19,9 +19,10 @@ newOrder: (req, res)=>{
 donor_summary: (req, res)=>{
   knex('user').where('id', req.session.user_id).then((results)=>{
     let user = results[0];
-    knex('order').where("user_id", req.session.user_id).andWhere('confirmation', 'confirmed').then((result)=>{
+    knex('order').where("user_id", req.session.user_id).whereNot('confirmation', 'completed').then((result)=>{
       res.render('donor_summary', {user: user, orders: result});
     })
+
   })
 }
 

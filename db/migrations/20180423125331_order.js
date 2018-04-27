@@ -8,6 +8,11 @@ exports.up = function(knex, Promise) {
     .inTable('user')
     .onDelete('CASCADE')
     .index();
+    table.integer('charity_id')
+    .references('id')
+    .inTable('user')
+    .onDelete('CASCADE')
+    .index();
     table.string('size');
     table.date('date');
     table.string('deadline');

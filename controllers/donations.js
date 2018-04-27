@@ -13,7 +13,8 @@ view_order: (req, res)=>{
 },
 update: (req, res)=>{
   knex('order').where('id', req.params.id).update({
-    confirmation: "confirmed"
+    confirmation: "confirmed",
+    charity_id:req.session.user_id
   }).then(()=>{
     res.redirect(`/viewOrder/${req.params.id}`);
   })
@@ -65,7 +66,7 @@ edit: (req, res)=>{
 charity_summary: (req, res)=>{
   knex('user').where('id', req.session.user_id).then((results)=>{
 
-    knex('order').where("user_id", req.session.user_id).then((result)=>{
+    knex('order').where("charity_id", req.session.user_id).then((result)=>{
       res.render('charitySummary', {user: results[0], orders: result});
     })
   })
@@ -77,7 +78,6 @@ completed_orders: (req, res)=>{
     .where("confirmation", "completed")
     .then((data)=>{
       knex('user').where('id', req.session.user_id).then((result)=>{
-
         res.render('completedOrders', {orders:data, user:result[0]});
       })
     })

@@ -82,9 +82,4 @@ completed_orders: (req, res)=>{
       })
     })
 },
-
-
-
-
-
 }

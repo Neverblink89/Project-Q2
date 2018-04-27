@@ -77,7 +77,8 @@ completed_orders: (req, res)=>{
     .where("confirmation", "completed")
     .then((data)=>{
       knex('user').where('id', req.session.user_id).then((result)=>{
-        res.render('donations', {donations:data, user:result[0]});
+
+        res.render('completedOrders', {orders:data, user:result[0]});
       })
     })
 },

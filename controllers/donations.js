@@ -1,7 +1,6 @@
 const knex = require("../db/knex.js");
 
 module.exports = {
-
 view_order: (req, res)=>{
   knex('order').where('id', req.params.id).then((result)=>{
     knex('note').where('id', req.params.id).then((results)=>{

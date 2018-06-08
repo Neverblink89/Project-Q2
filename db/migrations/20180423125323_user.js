@@ -9,7 +9,7 @@ exports.up = function(knex, Promise) {
     table.string('user_type');
     table.string('avatar_img');
     table.timestamps(true, true);
-  })
+
 };
 
 exports.down = function(knex, Promise) {
